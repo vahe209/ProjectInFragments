@@ -7,14 +7,14 @@
     android:background="@color/bg_btn">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_in_error_body"
         android:layout_width="wrap_content"
+        style="@style/TextView"
         android:layout_height="match_parent"
         android:layout_marginStart="24dp"
         android:fontFamily="@font/sf_pro_display_medium"
         android:gravity="center"
-        android:text="One of the fields is incorrect or invalid."
-        android:textColor="@color/white"
-        android:textFontWeight="700"
+        android:text="@string/one_of_the_fields_is_incorrect_or_invalid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

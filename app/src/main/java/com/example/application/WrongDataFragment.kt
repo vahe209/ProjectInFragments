@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.application
 
 import android.os.Bundle
 import android.os.Handler
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentWrongDataBinding
 
 @Suppress("DEPRECATION")
-class WrongDataFragment : Fragment() {
+class WrongDataFragment(private val textFromFragment:String) : Fragment() {
     private lateinit var binding: FragmentWrongDataBinding
     private var fragmentInteractionListener: FragmentInteractionListener? = null
     private val autoCloseDelayMillis = 3000
@@ -17,14 +17,13 @@ class WrongDataFragment : Fragment() {
     private val autoCloseRunnable = Runnable {
         fragmentInteractionListener?.onCloseButtonPressed()
     }
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentWrongDataBinding.inflate(layoutInflater, container, false)
+        binding.textInErrorBody.text =this.textFromFragment
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.close.setOnClickListener {
@@ -32,16 +31,20 @@ class WrongDataFragment : Fragment() {
         }
         startAutoCloseTimer()
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         handler.removeCallbacks(autoCloseRunnable)
     }
+
     private fun startAutoCloseTimer() {
         handler.postDelayed(autoCloseRunnable, autoCloseDelayMillis.toLong())
     }
+
     fun setFragmentInteractionListener(listener: FragmentInteractionListener) {
         fragmentInteractionListener = listener
     }
+
     interface FragmentInteractionListener {
         fun onCloseButtonPressed()
     }

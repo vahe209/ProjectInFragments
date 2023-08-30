@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:minHeight="700dp"
     android:paddingHorizontal="24dp"
-    tools:context=".FragmentEnterNumberCode">
+    tools:context=".EnterNumberCodeFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/searchView"

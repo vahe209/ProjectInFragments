@@ -9,7 +9,7 @@
     <string name="log_in">Log in</string>
     <string name="do_have_an_account">Do have an account?</string>
     <string name="register">Register</string>
-    <string name="toolbar_title_in_register_page">Join the community</string>
+    <string name="toolbar_title_in_register_page">JOIN THE COMMUNITY</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="phone_number">Phone number</string>
@@ -22,4 +22,13 @@
     <string name="terms_conditions">Terms &amp; Conditions</string>
     <string name="join">Join</string>
     <string name="accept_the_terms_amp_conditions_for_registration"><![CDATA[Accept the Terms & Conditions for registration]]></string>
+    <string name="toolbar_title_in_forgot_pass_page">FORGOT PASSWORD</string>
+    <string name="confirm_pass_text">Confirm your email/phone number and we’ll send 6-digit code to verify</string>
+    <string name="email_or_phone_number">Email/Phone Number</string>
+    <string name="send_code_again">Send Code Again</string>
+    <string name="request_code">Request Code</string>
+    <string name="one_of_the_fields_is_incorrect_or_invalid">One of the fields is incorrect or invalid.</string>
+
+    <string name="enter_email_or_phone_error_text">Enter email/phone number to get code</string>
+
 </resources>

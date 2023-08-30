@@ -6,33 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/bg_color">
 
-    <androidx.appcompat.widget.Toolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/bg_color"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/baseline_arrow_back" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/auto_login_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/sf_pro_display_medium"
-            android:gravity="center"
-            android:text="@string/toolbar_title_in_login_page"
-            android:textColor="@color/white"
-            android:textFontWeight="700"
-            android:textSize="16sp" />
-    </androidx.appcompat.widget.Toolbar>
+        layout="@layout/toolbar_view" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -104,14 +80,11 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/email_edit_title"
+                style="@style/TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/sf_pro_display_medium"
                 android:text="@string/email"
-                android:textColor="@color/white"
-                android:textFontWeight="700"
-                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/or_line"
                 app:layout_constraintStart_toStartOf="@id/or_line"
                 app:layout_constraintTop_toBottomOf="@id/or_line" />
@@ -121,35 +94,28 @@
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:errorIconDrawable="@null"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:layout_constraintEnd_toEndOf="@id/email_edit_title"
                 app:layout_constraintStart_toStartOf="@id/email_edit_title"
                 app:layout_constraintTop_toBottomOf="@id/email_edit_title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_edit"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/sf_pro_display_medium"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/white"
-                    android:textFontWeight="700"
-                    android:textSize="14sp" />
+                    android:inputType="textEmailAddress" />
             </com.example.project.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/password_edit_title"
+                style="@style/TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_display_medium"
                 android:text="@string/password"
-                android:textColor="@color/white"
-                android:textFontWeight="700"
-                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/email_input_layout"
                 app:layout_constraintStart_toStartOf="@+id/email_input_layout"
                 app:layout_constraintTop_toBottomOf="@+id/email_input_layout" />
@@ -159,9 +125,9 @@
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:errorIconDrawable="@null"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:layout_constraintEnd_toEndOf="@id/password_edit_title"
                 app:layout_constraintStart_toStartOf="@id/password_edit_title"
                 app:layout_constraintTop_toBottomOf="@id/password_edit_title"
@@ -170,40 +136,32 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/sf_pro_display_medium"
                     android:gravity="center_vertical"
-                    android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textFontWeight="700"
-                    android:textSize="14sp" />
+                    android:inputType="textPassword" />
             </com.example.project.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/forgot_pass_text"
+                style="@style/SmallSizeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_display_medium"
                 android:text="@string/forgot_password"
                 android:textColor="@color/blue"
-                android:textFontWeight="400"
                 app:layout_constraintStart_toStartOf="@id/password_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/password_input_layout" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
-                android:layout_width="230dp"
-                android:layout_height="50dp"
+                style="@style/LoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/bg_btn"
-                android:fontFamily="@font/sf_pro_display_medium"
                 android:text="@string/log_in"
-                android:textColor="@color/white"
-                android:textFontWeight="700"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/forgot_pass_text" />
@@ -220,25 +178,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/have_account_text"
+                    style="@style/SmallSizeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sf_pro_display_medium"
                     android:text="@string/do_have_an_account"
                     android:textColor="@color/light_grey"
-                    android:textFontWeight="400"
                     app:layout_constraintStart_toStartOf="@id/btn_login"
                     app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_for_registration"
+                    style="@style/SmallSizeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginLeft="4dp"
-                    android:fontFamily="@font/sf_pro_display_medium"
                     android:gravity="center"
-                    android:text="@string/register"
-                    android:textColor="@color/white"
-                    android:textFontWeight="400" />
+                    android:text="@string/register" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

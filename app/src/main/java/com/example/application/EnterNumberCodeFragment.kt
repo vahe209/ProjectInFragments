@@ -3,7 +3,6 @@ package com.example.application
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,16 +21,14 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.*
 
-class FragmentEnterNumberCode(private var selectedItem: PhoneCodesItem?, private val closeFragmentEnterNumberCode: RegisterFragment): BottomSheetDialogFragment() {
+class EnterNumberCodeFragment(
+    private var selectedItem: PhoneCodesItem?,
+    private val closeFragmentEnterNumberCode: RegisterFragment): BottomSheetDialogFragment() {
     private lateinit var binding: FragmentEnterNumberCodeBinding
     private lateinit var items: ArrayList<PhoneCodesItem>
     private lateinit var adapter: CodesAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentEnterNumberCodeBinding.inflate(layoutInflater, container, false)
         setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
         dialog?.setOnShowListener { dialog ->
@@ -59,10 +56,8 @@ class FragmentEnterNumberCode(private var selectedItem: PhoneCodesItem?, private
         override fun afterTextChanged(editable: Editable?) {
             filterCodes(editable.toString())
         }
-
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
         }
-
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         }
     }
@@ -91,10 +86,7 @@ class FragmentEnterNumberCode(private var selectedItem: PhoneCodesItem?, private
 
         for (item in items) {
             if (item.name.lowercase(Locale.getDefault())
-                    .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(
-                    string
-                )
-            ) {
+                    .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(string)) {
                 filteredCodes.add(item)
                 binding.nothingFoundText.isVisible = false
             }

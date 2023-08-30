@@ -12,20 +12,21 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.application.databinding.FragmentLoginBinding
 
-class LoginFragment(private val context: Context) : Fragment() {
+class LoginFragment(
+    private val context: Context,
+    private val createFragment: CreateFragment) : Fragment() {
     private lateinit var binding: FragmentLoginBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.toolbar.toolbarTitle.text = resources.getText(R.string.toolbar_title_in_login_page)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.textForRegistration.setOnClickListener {
-           createRegisterFragment()
+            createFragment.createFragment(RegisterFragment(context, createFragment))
         }
         binding.btnLogin.setOnClickListener {
             val isLoginValid = checkEmail()
@@ -36,8 +37,10 @@ class LoginFragment(private val context: Context) : Fragment() {
                 println("Error")
             }
         }
+        binding.forgotPassText.setOnClickListener {
+            createFragment.createFragment(ForgotPasswordFragment(createFragment,context))
+        }
     }
-
 
     private fun checkPassword(): Boolean {
         val drawable: GradientDrawable = binding.passwordEdit.background as GradientDrawable
@@ -51,6 +54,7 @@ class LoginFragment(private val context: Context) : Fragment() {
             true
         }
     }
+
     private fun checkEmail(): Boolean {
         val drawable: GradientDrawable = binding.emailEdit.background as GradientDrawable
         return if (binding.emailEdit.text.toString().isEmpty()) {
@@ -63,8 +67,12 @@ class LoginFragment(private val context: Context) : Fragment() {
             true
         }
     }
-    private fun createRegisterFragment() {
-        activity?.supportFragmentManager?.beginTransaction()
-            ?.replace(R.id.main_fragment_layout, RegisterFragment(context))?.commit()
+
+    override fun onStop() {
+        super.onStop()
+        var drawable: GradientDrawable = binding.emailEdit.background as GradientDrawable
+        drawable.setStroke(1, ContextCompat.getColor(context, R.color.bg_color))
+         drawable = binding.passwordEdit.background as GradientDrawable
+        drawable.setStroke(1, ContextCompat.getColor(context, R.color.bg_color))
     }
 }
