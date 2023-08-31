@@ -1,20 +1,19 @@
 package com.example.application
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentLoginBinding
+import com.example.application.interfaces.Interfaces
 
 class LoginFragment(
     private val context: Context,
-    private val createFragment: CreateFragment) : Fragment() {
+    private val createFragment: Interfaces.CreateFragment) : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

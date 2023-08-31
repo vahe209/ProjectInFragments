@@ -1,26 +1,20 @@
 package com.example.application
 
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.application.databinding.ActivityMainBinding
+import com.example.application.interfaces.Interfaces
 
-class MainActivity : AppCompatActivity(), CreateFragment {
+class MainActivity : AppCompatActivity(), Interfaces.CreateFragment{
     private lateinit var binding: ActivityMainBinding
+    private var createFragment: Interfaces.CreateFragment = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        createLoginFragment()
-    }
-
-    private fun createLoginFragment() {
-             supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.main_fragment_layout, LoginFragment(this,this))
-            .commit()
+        createFragment.createFragment(LoginFragment(this,createFragment))
     }
 
     override fun createFragment(fragment: Fragment) {
@@ -31,6 +25,3 @@ class MainActivity : AppCompatActivity(), CreateFragment {
     }
 }
 
-interface CreateFragment{
-    fun createFragment(fragment:Fragment)
-}

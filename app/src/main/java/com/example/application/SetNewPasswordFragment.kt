@@ -4,21 +4,20 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentSetNewPasswordBinding
-import com.google.android.material.color.utilities.MaterialDynamicColors.background
+import com.example.application.interfaces.Interfaces
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class SetNewPasswordFragment(
     private val context: Context,
-    private val createFragment: CreateFragment) : Fragment() {
+    private val createFragment: Interfaces.CreateFragment) : Fragment() {
     private lateinit var binding : FragmentSetNewPasswordBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSetNewPasswordBinding.inflate(inflater, container, false)

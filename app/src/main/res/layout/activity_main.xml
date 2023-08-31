@@ -6,6 +6,7 @@
     android:id="@+id/navigation_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".MainActivity"
         tools:openDrawer="start">
         <FrameLayout
             android:id="@+id/main_fragment_layout"

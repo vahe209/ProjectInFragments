@@ -14,16 +14,17 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.application.databinding.FragmentRegisterBinding
-import com.example.application.viewModels.ViewModelRegisterActivity
 import com.example.application.adapter.CodesAdapter
+import com.example.application.databinding.FragmentRegisterBinding
+import com.example.application.interfaces.Interfaces
+import com.example.application.viewModels.ViewModelRegisterActivity
 import com.example.project.data.PhoneCodesItem
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class RegisterFragment(
     private val context: Context,
-    private val createFragment: CreateFragment):
+    private val createFragment: Interfaces.CreateFragment):
     Fragment(),
     WrongDataFragment.FragmentInteractionListener,
     CodesAdapter.CloseFragment{
@@ -296,7 +297,7 @@ class RegisterFragment(
 
     override fun onStop() {
         super.onStop()
-        var drawable = binding.fNameEdit.background as GradientDrawable
+        val drawable = binding.fNameEdit.background as GradientDrawable
         drawable.setStroke(1,ContextCompat.getColor(context, R.color.bg_color))
     }
 }

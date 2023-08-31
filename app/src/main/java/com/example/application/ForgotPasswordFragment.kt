@@ -1,19 +1,18 @@
 package com.example.application
 
 import android.content.Context
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentForgotPasswordBinding
+import com.example.application.interfaces.Interfaces
 
 class ForgotPasswordFragment(
-    private val createFragment: CreateFragment,
+    private val createFragment: Interfaces.CreateFragment,
     private val context: Context)
     : Fragment(),
     WrongDataFragment.FragmentInteractionListener {
