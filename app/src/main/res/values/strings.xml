@@ -30,5 +30,11 @@
     <string name="one_of_the_fields_is_incorrect_or_invalid">One of the fields is incorrect or invalid.</string>
 
     <string name="enter_email_or_phone_error_text">Enter email/phone number to get code</string>
+    <string name="one_last_step_to_access_your_profile">One last step to access your profile</string>
+    <string name="new_password">New Password</string>
+    <string name="toolbar_title_in_rester_password_page">SET NEW PASSWORD</string>
+    <string name="complete">Complete</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="you_password_was_successfully_setup">You password was successfully setup</string>
 
 </resources>
