@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
@@ -80,9 +81,16 @@ class SetNewPasswordFragment(
                 drawable.setStroke(1, ContextCompat.getColor(context, R.color.bg_btn))
                 binding.passwordInputLayout.setErrorTextColor(
                     ColorStateList.valueOf(ContextCompat.getColor(context, R.color.bg_btn)))
-                binding.passwordInputLayout.error = resources.getText(R.string.helper_text)
+                binding.passwordInputLayout.error ="Incorrect password type"
             }
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                createFragment.createFragment(ForgotPasswordFragment(createFragment,context))
+            }
+
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     @Suppress("UNREACHABLE_CODE")

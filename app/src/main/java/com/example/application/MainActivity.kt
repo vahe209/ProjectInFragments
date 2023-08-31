@@ -23,5 +23,6 @@ class MainActivity : AppCompatActivity(), Interfaces.CreateFragment{
             .replace(R.id.main_fragment_layout, fragment)
             .commit()
     }
+
 }
 

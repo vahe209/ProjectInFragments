@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
@@ -123,6 +124,13 @@ class RegisterFragment(
                 Toast.makeText(context, "Everything is working", Toast.LENGTH_SHORT).show()
             }
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                createFragment.createFragment(LoginFragment(context,createFragment))
+            }
+
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     private fun checkBoxIsChecked(): Boolean {

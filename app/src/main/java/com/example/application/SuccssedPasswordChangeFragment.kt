@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentSuccssedPasswordChangeBinding
 import com.example.application.interfaces.Interfaces
@@ -24,6 +25,13 @@ private lateinit var binding: FragmentSuccssedPasswordChangeBinding
         binding.btnLogin.setOnClickListener {
             createFragment.createFragment(LoginFragment(context,createFragment))
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                createFragment.createFragment(LoginFragment(context,createFragment))
+            }
+
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
 }

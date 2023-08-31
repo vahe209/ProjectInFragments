@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
@@ -88,6 +89,13 @@ class ForgotPasswordFragment(
                 binding.sendCodeLayout.isVisible = true
             }
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                createFragment.createFragment(LoginFragment(context,createFragment))
+            }
+
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     private fun userInfoEdit(): Boolean {
