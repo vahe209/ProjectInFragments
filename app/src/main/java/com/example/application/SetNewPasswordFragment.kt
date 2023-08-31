@@ -65,7 +65,7 @@ class SetNewPasswordFragment(
         binding.toolbar.backArrow.setOnClickListener {
             createFragment.createFragment(ForgotPasswordFragment(createFragment,context))
         }
-        binding.compelteChanges.setOnClickListener {
+        binding.completeChanges.setOnClickListener {
             if (validPassword){
                 if (binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()){
                     createFragment.createFragment(SuccssedPasswordChangeFragment(context,createFragment))
