@@ -29,7 +29,6 @@ private lateinit var binding: FragmentSuccssedPasswordChangeBinding
             override fun handleOnBackPressed() {
                 createFragment.createFragment(LoginFragment(context,createFragment))
             }
-
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
     }

@@ -5,7 +5,6 @@ import com.example.application.data.PhoneCodesItem
 
 class ViewModelRegisterActivity:ViewModel() {
     private var  selectedNumberCodeLiveData= PhoneCodesItem("US","+1", "🇺🇸","United States")
-
     fun setSelectedNumberCode(item: PhoneCodesItem) {
         selectedNumberCodeLiveData = item
     }

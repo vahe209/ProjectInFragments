@@ -59,7 +59,6 @@ class LoginFragment(
             false
         } else {
             binding.emailInputLayout.error = null
-
             true
         }
     }

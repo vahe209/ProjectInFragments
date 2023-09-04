@@ -137,6 +137,4 @@ class ForgotPasswordFragment(
             createFragment.createFragment(SetNewPasswordFragment(context, createFragment))
         }
     }
-
-
 }

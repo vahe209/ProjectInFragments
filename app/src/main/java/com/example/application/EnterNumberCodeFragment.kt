@@ -83,7 +83,6 @@ class EnterNumberCodeFragment(
 
     private fun filterCodes(string: String) {
         val filteredCodes = ArrayList<PhoneCodesItem>()
-
         for (item in items) {
             if (item.name.lowercase(Locale.getDefault())
                     .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(string)) {
