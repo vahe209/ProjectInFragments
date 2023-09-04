@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:context=".RegisterFragment"
     android:layout_height="fill_parent"
-    android:background="@color/bg_color">
+    android:background="@color/accent_1"
+    tools:context=".RegisterFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -14,6 +14,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -25,82 +26,80 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/fName_edit_title"
-                style="@style/TextView"
-                android:layout_width="0dp"
+                style="@style/TextWhite14"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/first_name"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="start|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/first_name_key"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/fName_input_layout"
                 style="@style/TextInputLayoutStyle"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
-                app:errorIconDrawable="@null"
-                app:layout_constraintEnd_toEndOf="@id/fName_edit_title"
-                app:layout_constraintStart_toStartOf="@id/fName_edit_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fName_edit_title">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/fName_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
                     android:inputType="textCapSentences" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lName_edit_title"
-                style="@style/TextView"
+                style="@style/TextWhite14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/last_name"
+                android:text="@string/last_name_key"
                 app:layout_constraintEnd_toEndOf="@id/fName_input_layout"
                 app:layout_constraintStart_toStartOf="@id/fName_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/fName_input_layout" />
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/lName_input_layout"
                 style="@style/TextInputLayoutStyle"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
-                app:errorIconDrawable="@null"
-                app:layout_constraintEnd_toEndOf="@id/lName_edit_title"
-                app:layout_constraintStart_toStartOf="@id/lName_edit_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lName_edit_title">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/lName_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
                     android:inputType="textCapSentences" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/email_edit_title"
-                style="@style/TextView"
+                style="@style/TextWhite14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_medium"
-                android:text="@string/email"
+                android:text="@string/email_key"
                 app:layout_constraintEnd_toEndOf="@id/lName_input_layout"
                 app:layout_constraintStart_toStartOf="@id/lName_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/lName_input_layout" />
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/email_input_layout"
                 style="@style/TextInputLayoutStyle"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
@@ -109,23 +108,23 @@
                 app:layout_constraintStart_toStartOf="@id/email_edit_title"
                 app:layout_constraintTop_toBottomOf="@id/email_edit_title">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/email_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
                     android:inputType="textEmailAddress" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/phone_edit_title"
-                style="@style/TextView"
-                android:layout_width="0dp"
+                style="@style/TextWhite14"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_display_medium"
-                android:text="@string/phone_number"
-                app:layout_constraintEnd_toEndOf="@id/email_input_layout"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/phone_number_key"
                 app:layout_constraintStart_toStartOf="@id/email_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/email_input_layout" />
 
@@ -157,163 +156,143 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="2dp"
-                    android:src="@drawable/dropdown_arrow"
+                    android:src="@drawable/icon_bottom_arrow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/flag"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/number_code_fixed"
-                    style="@style/TextView"
+                    style="@style/TextLightGrey14"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="14dp"
                     android:gravity="center"
                     android:text="+1"
-                    android:textColor="@color/light_grey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/dropdown_arrow"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/phone_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@null"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/choose_country_code"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/email_input_layout"
                 app:layout_constraintStart_toEndOf="@id/choose_country_code"
                 app:layout_constraintTop_toTopOf="@id/choose_country_code">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/phone_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/sf_pro_display_medium"
                     android:inputType="phone" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/password_edit_title"
-                style="@style/TextView"
-                android:layout_width="0dp"
+                style="@style/TextWhite14"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sf_pro_display_medium"
-                android:text="@string/password"
-                app:layout_constraintEnd_toEndOf="@id/password_input_layout"
+                android:text="@string/password_key"
                 app:layout_constraintStart_toStartOf="@id/password_input_layout"
                 app:layout_constraintTop_toBottomOf="@+id/choose_country_code" />
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/password_input_layout"
-                style="@style/TextInputLayoutStyle"
+                style="@style/PasswordLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@null"
-                app:helperText="@string/helper_text"
+                app:helperText="@string/helper_text_key"
                 app:helperTextEnabled="true"
-                app:helperTextTextColor="@color/light_grey"
+                app:helperTextTextColor="@color/accent_4"
                 app:layout_constraintTop_toBottomOf="@id/password_edit_title"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/light_grey">
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/sf_pro_display_medium"
-                    android:inputType="textWebPassword" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword" />
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/confirm_edit_title"
-                style="@style/TextView"
-                android:layout_width="0dp"
+                style="@style/TextWhite14"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/confirm_password"
-                app:layout_constraintEnd_toEndOf="@id/password_input_layout"
+                android:text="@string/confirm_password_key"
                 app:layout_constraintStart_toStartOf="@id/password_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/password_input_layout" />
 
-            <com.example.project.customClasses.CustomTextInputLayout
+            <com.example.application.customClasses.CustomTextInputLayout
                 android:id="@+id/confirm_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                app:boxBackgroundMode="outline"
                 app:errorEnabled="true"
-                app:errorIconDrawable="@null"
-                app:helperTextTextColor="@color/light_grey"
                 app:layout_constraintTop_toBottomOf="@id/confirm_edit_title"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/light_grey">
+                app:passwordToggleTint="@color/accent_4">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/confirm_edit"
-                    style="@style/TextInputEditText"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/sf_pro_display_medium"
-                    android:inputType="textWebPassword"
-                    android:textColor="@color/white"
-                    android:textFontWeight="700"
-                    android:textSize="14sp" />
-            </com.example.project.customClasses.CustomTextInputLayout>
+                    android:layout_height="match_parent"
+                    android:inputType="textWebPassword" />
+            </com.example.application.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/agreement_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/light_grey"
-                app:layout_constraintStart_toStartOf="parent"
+                android:buttonTint="@color/accent_4"
+                app:layout_constraintStart_toStartOf="@id/confirm_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/confirm_input_layout" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/agreement_text_1"
-                style="@style/SmallSizeTextView"
+                style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="@string/i_accept_the"
+                android:text="@string/accept_the_key"
                 app:layout_constraintBottom_toBottomOf="@id/agreement_checkbox"
                 app:layout_constraintStart_toEndOf="@id/agreement_checkbox"
                 app:layout_constraintTop_toTopOf="@id/agreement_checkbox" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/agreement_text_2"
-                style="@style/SmallSizeTextView"
+                style="@style/TextBlue14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="@string/terms_conditions"
-                android:textColor="@color/blue"
+                android:text="@string/terms_conditions_key"
+                android:textColor="@color/accent_5"
                 app:layout_constraintBottom_toBottomOf="@id/agreement_text_1"
                 app:layout_constraintStart_toEndOf="@id/agreement_text_1"
                 app:layout_constraintTop_toTopOf="@id/agreement_text_1" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_join"
-                style="@style/LoginButton"
-                android:layout_width="wrap_content"
+                style="@style/MainRedButtonStyle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_btn"
                 android:layout_marginTop="36dp"
-                android:text="@string/join"
+                android:text="@string/join_key"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/agreement_checkbox" />
@@ -330,22 +309,21 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/have_account_text"
-                    style="@style/SmallSizeTextView"
+                    style="@style/TextLightGrey14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/do_have_an_account"
-                    android:textColor="@color/light_grey"
+                    android:text="@string/do_have_an_account_key"
                     app:layout_constraintStart_toStartOf="@id/btn_login"
                     app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_for_login"
-                    style="@style/SmallSizeTextView"
+                    style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginStart="4dp"
                     android:gravity="center"
-                    android:text="@string/log_in" />
+                    android:text="@string/login_key" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

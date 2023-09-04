@@ -11,7 +11,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.application.R
 import com.example.application.RegisterFragment
-import com.example.project.data.PhoneCodesItem
+import com.example.application.data.PhoneCodesItem
 
 class CodesAdapter(
     private var codes: ArrayList<PhoneCodesItem>,

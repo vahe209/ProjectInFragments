@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditText">
+        <attr name="state_error" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="errorTextGravity" format="enum">
+            <enum name="INHERIT" value="0" />
+            <enum name="GRAVITY" value="1" />
+            <enum name="START" value="2" />
+            <enum name="END" value="3" />
+            <enum name="CENTER" value="4" />
+            <enum name="VIEW_START" value="5" />
+            <enum name="VIEW_END" value="6" />
+        </attr>
+        <attr name="defStyle" format="reference" />
+        <attr name="emptyStateErrorText" format="reference" />
+    </declare-styleable>
+
+</resources>

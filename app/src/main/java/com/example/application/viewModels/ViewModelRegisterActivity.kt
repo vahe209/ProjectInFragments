@@ -1,7 +1,7 @@
 package com.example.application.viewModels
 
 import androidx.lifecycle.ViewModel
-import com.example.project.data.PhoneCodesItem
+import com.example.application.data.PhoneCodesItem
 
 class ViewModelRegisterActivity:ViewModel() {
     private var  selectedNumberCodeLiveData= PhoneCodesItem("US","+1", "🇺🇸","United States")
@@ -9,7 +9,7 @@ class ViewModelRegisterActivity:ViewModel() {
     fun setSelectedNumberCode(item: PhoneCodesItem) {
         selectedNumberCodeLiveData = item
     }
-    fun getSelectedNumberCode(): PhoneCodesItem{
+    fun getSelectedNumberCode(): PhoneCodesItem {
         return selectedNumberCodeLiveData
     }
 }

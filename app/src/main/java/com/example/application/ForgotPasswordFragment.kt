@@ -25,14 +25,14 @@ class ForgotPasswordFragment(
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
-        binding.toolbar.toolbarTitle.text =
-            resources.getText(R.string.toolbar_title_in_forgot_pass_page)
+        binding.toolbar.toolbarTitleTv.text =
+            resources.getText(R.string.toolbar_title_in_forgot_pass_key)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.toolbar.backArrow.setOnClickListener {
+        binding.toolbar.iconBack.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
         binding.box1.doOnTextChanged { text, _, _, _ ->
@@ -108,18 +108,18 @@ class ForgotPasswordFragment(
     }
 
     private fun openErrorFragment() {
-        binding.toolbar.backArrow.isVisible = false
-        binding.toolbar.toolbarTitle.isVisible = false
+        binding.toolbar.iconBack.isVisible = false
+        binding.toolbar.toolbarTitleTv.isVisible = false
         val wrongDataFragment =
-            WrongDataFragment(resources.getString(R.string.enter_email_or_phone_error_text))
+            WrongDataFragment(resources.getString(R.string.enter_email_or_phone_error_key))
         wrongDataFragment.setFragmentInteractionListener(this)
         activity?.supportFragmentManager?.beginTransaction()
             ?.replace(R.id.toolbar, wrongDataFragment)?.commit()
     }
 
     override fun onCloseButtonPressed() {
-        binding.toolbar.backArrow.isVisible = true
-        binding.toolbar.toolbarTitle.isVisible = true
+        binding.toolbar.iconBack.isVisible = true
+        binding.toolbar.toolbarTitleTv.isVisible = true
         val fragment = activity?.supportFragmentManager?.findFragmentById(R.id.toolbar)
         if (fragment is WrongDataFragment) {
             activity?.supportFragmentManager?.beginTransaction()?.remove(fragment)?.commit()

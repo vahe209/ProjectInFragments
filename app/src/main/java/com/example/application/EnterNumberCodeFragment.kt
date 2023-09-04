@@ -12,7 +12,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.application.adapter.CodesAdapter
 import com.example.application.databinding.FragmentEnterNumberCodeBinding
-import com.example.project.data.PhoneCodesItem
+import com.example.application.data.PhoneCodesItem
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

@@ -1,5 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="TextWhite14" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextLightGrey14" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/accent_4</item>
+    </style>
+
+    <style name="TextBlue14" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/accent_5</item>
+    </style>
+
+    <style name="TextWhite16" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextBoldWhite16" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextWhite18" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextBoldWhite24" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextBoldWhite36" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextYellowWhite36" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/accent_6</item>
+    </style>
+
+    /////////////////////
+    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox</item>
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontWeight">700</item>
+    </style>
+
+
+
+
+
+
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/main_button_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/main_button_corner_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/main_button_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/main_button_corner_radius</item>
+        <item name="boxStrokeColor">@color/white</item>
+        <item name="boxStrokeErrorColor">@null</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="android:layout_marginHorizontal">24dp</item>
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="errorEnabled">true</item>
+       <item name="errorTextGravity">VIEW_END</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="PasswordLayoutStyle" parent="TextInputLayoutStyle">
+           <item name="endIconMode">@null</item>
+        <item name="passwordToggleTint">@color/accent_4</item>
+        <item name="passwordToggleEnabled">true</item>
+       </style>
+
+    <style name="TextInputWithIconStyle" parent="TextInputLayoutStyle"></style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="hintEnabled">true</item>
+        <item name="android:textColorHint">@color/accent_4</item>
+    </style>
+
+    <style name="NumberEditTextStyle" parent="EditTextStyle">
+        <item name="android:inputType">number</item>
+        <item name="android:digits">0123456789</item>
+    </style>
+
+    <style name="NumberEditTextBoxStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="hintEnabled">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textColorHint">@color/accent_4</item>
+        <item name="android:inputType">number</item>
+        <item name="android:digits">0123456789</item>
+        <item name="android:background">@drawable/forgot_pass_code_bg</item>
+
+    </style>
+
+    <style name="MainButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/main_button_text_size</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/main_button_horizontal_margin</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="MainRedButtonStyle" parent="MainButtonStyle">
+        <item name="android:background">@drawable/shape_main_red_button</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/accent_2</item>
+        <item name="android:textSize">11sp</item>
+    </style>
 
     <style name="AppBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModelStyle</item>
@@ -16,57 +154,6 @@
     <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:layout_height">match_parent</item>
-    </style>
-
-    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <item name="colorAccent">@color/white</item>
-        <item name="height">50dp</item>
-    </style>
-
-    <style name="MyCheckboxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="buttonTint">@color/light_grey</item>
-    </style>
-
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="helperTextTextColor">@color/green</item>
-    </style>
-
-    <style name="TextView" parent="Widget.AppCompat.TextView">
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="fontWeight">700</item>
-    </style>
-
-    <style name="SmallSizeTextView" parent="Widget.AppCompat.TextView">
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="fontWeight">400</item>
-    </style>
-
-    <style name="FragmentTitleText" parent="Widget.AppCompat.TextView">
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
-        <item name="fontWeight">700</item>
-        <item name="android:layout_gravity">center</item>
-    </style>
-
-    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox</item>
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="fontWeight">700</item>
-    </style>
-    <style name="LoginButton" parent="TextAppearance.AppCompat.Button">
-        <item name="android:width">214dp</item>
-        <item name="height">50dp</item>
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
-        <item name="fontWeight">700</item>
     </style>
 
 </resources>

@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?actionBarSize"
-    android:background="@color/bg_color"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="MissingConstraints"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accent_1">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/back_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/baseline_arrow_back" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toolbar_title_tv"
+        style="@style/TextWhite16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/some_title_key"
+        android:textAllCaps="true" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/toolbar_title"
-            style="@style/FragmentTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white" />
-    </androidx.appcompat.widget.Toolbar>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_title_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_title_tv" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toolbar_some_btn_tv"
+        style="@style/TextBlue14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:visibility="invisible"
+        android:text="@string/some_button_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_title_tv"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_title_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

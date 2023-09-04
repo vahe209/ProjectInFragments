@@ -12,10 +12,10 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:drawableStart="@drawable/baseline_search_24"
+        android:drawableStart="@drawable/icon_search"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:hint="@string/search"
+        android:hint="@string/search_key"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:id="@+id/close_fragment_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/close"
+        android:src="@drawable/icon_cancel"
         app:layout_constraintBottom_toBottomOf="@+id/searchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/searchView" />
@@ -55,7 +55,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="Nothing found"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/accent_4"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/scrollView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
