@@ -35,7 +35,6 @@ class RegisterFragment(
     private lateinit var viewModel: ViewModelRegisterActivity
     private lateinit var selectedNumberCode: PhoneCodesItem
     private lateinit var fragmentEnterNumberCode: EnterNumberCodeFragment
-    private lateinit var termsAndConditionsFragment: TermsAndConditionsFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -133,8 +132,7 @@ class RegisterFragment(
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
         binding.agreementText2.setOnClickListener {
-            termsAndConditionsFragment = TermsAndConditionsFragment()
-            openFragment(termsAndConditionsFragment)
+            openFragment(TermsAndConditionsFragment())
         }
     }
 
