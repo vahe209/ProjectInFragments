@@ -49,21 +49,6 @@
         <item name="android:textColor">@color/accent_6</item>
     </style>
 
-    /////////////////////
-    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox</item>
-        <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="fontWeight">700</item>
-    </style>
-
-
-
-
-
-
-
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="boxBackgroundColor">@color/white</item>
         <item name="boxBackgroundMode">outline</item>
