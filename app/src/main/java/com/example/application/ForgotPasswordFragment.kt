@@ -87,6 +87,7 @@ class ForgotPasswordFragment(
             if (userInfoEdit()) {
                 binding.sendCodeBtn.isVisible = false
                 binding.sendCodeLayout.isVisible = true
+                binding.forgotPassEdit.isFocusable = false
             }
         }
         val callback = object: OnBackPressedCallback(true){
