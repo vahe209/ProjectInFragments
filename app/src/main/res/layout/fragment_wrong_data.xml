@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    tools:context=".WrongDataFragment"
-    android:background="@color/accent_2">
+    android:background="@color/accent_2"
+    tools:context=".WrongDataFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_in_error_body"
-        android:layout_width="wrap_content"
         style="@style/TextWhite14"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="24dp"
-        android:fontFamily="@font/sf_pro_display_medium"
         android:gravity="center"
         android:text="@string/invalid_email_or_phone_key"
         app:layout_constraintBottom_toBottomOf="parent"

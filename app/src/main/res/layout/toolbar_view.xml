@@ -12,20 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="12dp"
+        android:text="@string/some_title_key"
         android:textAlignment="center"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/some_title_key"
-        android:textAllCaps="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icon_back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_marginStart="24dp"
+        android:gravity="center"
         android:src="@drawable/icon_back"
         app:layout_constraintBottom_toBottomOf="@id/toolbar_title_tv"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,10 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:visibility="invisible"
         android:text="@string/some_button_key"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar_title_tv"
-        app:layout_constraintBottom_toBottomOf="@id/toolbar_title_tv"/>
+        app:layout_constraintTop_toTopOf="@id/toolbar_title_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
