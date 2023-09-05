@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/accent_1">
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_view" />
@@ -15,45 +16,46 @@
         android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="32dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/unlock_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/unlock_with_face_id_key"
-                    android:textColor="@color/white"
-                    android:textFontWeight="700"
-                    android:textSize="24sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:targetApi="p" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/unlock_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/unlock_with_face_id_key"
+                android:textColor="@color/white"
+                android:textFontWeight="700"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:targetApi="p" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/face_id"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="24dp"
-                    android:src="@drawable/icon_face_id"
-                    app:layout_constraintEnd_toEndOf="@id/unlock_title"
-                    app:layout_constraintStart_toStartOf="@id/unlock_title"
-                    app:layout_constraintTop_toBottomOf="@id/unlock_title" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/face_id"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/icon_face_id"
+                app:layout_constraintEnd_toEndOf="@id/unlock_title"
+                app:layout_constraintStart_toStartOf="@id/unlock_title"
+                app:layout_constraintTop_toBottomOf="@id/unlock_title" />
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/switch_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:thumb="@drawable/switch_compat_thumb"
-                    app:layout_constraintEnd_toEndOf="@id/face_id"
-                    app:layout_constraintStart_toStartOf="@id/face_id"
-                    app:layout_constraintTop_toBottomOf="@id/face_id"
-                    app:track="@drawable/switch_compat_track" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:thumb="@drawable/switch_compat_thumb"
+                app:layout_constraintEnd_toEndOf="@id/face_id"
+                app:layout_constraintStart_toStartOf="@id/face_id"
+                app:layout_constraintTop_toBottomOf="@id/face_id"
+                app:track="@drawable/switch_compat_track" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/or_line"
