@@ -37,7 +37,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/fName_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="textCapSentences" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lName_edit_title"
@@ -66,7 +66,7 @@
                 app:layout_constraintStart_toStartOf="@id/fName_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/fName_input_layout" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/lName_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="textCapSentences" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/email_edit_title"
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="@id/lName_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/lName_input_layout" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/email_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="textEmailAddress" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/phone_edit_title"
@@ -174,7 +174,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/phone_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
@@ -192,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="phone" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/password_edit_title"
@@ -204,7 +204,7 @@
                 app:layout_constraintStart_toStartOf="@id/password_input_layout"
                 app:layout_constraintTop_toBottomOf="@+id/choose_country_code" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/password_input_layout"
                 style="@style/PasswordLayoutStyle"
                 android:layout_width="match_parent"
@@ -213,8 +213,7 @@
                 app:helperText="@string/helper_text_key"
                 app:helperTextEnabled="true"
                 app:helperTextTextColor="@color/accent_4"
-                app:layout_constraintTop_toBottomOf="@id/password_edit_title"
-                app:passwordToggleEnabled="true">
+                app:layout_constraintTop_toBottomOf="@id/password_edit_title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit"
@@ -222,7 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/confirm_edit_title"
@@ -234,7 +233,7 @@
                 app:layout_constraintStart_toStartOf="@id/password_input_layout"
                 app:layout_constraintTop_toBottomOf="@id/password_input_layout" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/confirm_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -251,7 +250,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textWebPassword" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/agreement_checkbox"

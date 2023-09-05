@@ -20,6 +20,8 @@ import com.example.application.databinding.FragmentRegisterBinding
 import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.LoginAndRegister.viewModels.ViewModelRegisterActivity
 import com.example.application.R
+import com.example.application.util.PASSWORD_PATTERN
+import com.example.application.util.checkPattern
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -50,8 +52,8 @@ class RegisterFragment(
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ViewModelRegisterActivity::class.java]
         if (arguments != null) {
-            binding.flag.text = arguments!!.getString("flag")
-            binding.numberCodeFixed.text = arguments!!.getString("numberCode")
+            binding.flag.text = arguments?.getString("flag")
+            binding.numberCodeFixed.text = arguments?.getString("numberCode")
         }
         binding.toolbar.iconBack.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
@@ -65,7 +67,9 @@ class RegisterFragment(
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
         binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
-            if (isValidPass(text.toString())) {
+            validPassword  = text?.toString().checkPattern(PASSWORD_PATTERN)
+            binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
+/*     if (isValidPass(text.toString())) {
                 binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
                     R.color.accent_7
                 )))
@@ -77,7 +81,7 @@ class RegisterFragment(
                 )))
                 binding.passwordInputLayout.error = null
                 validPassword = false
-            }
+            }*/
         }
         binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
             if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString()
@@ -219,8 +223,7 @@ class RegisterFragment(
 
     @Suppress("UNREACHABLE_CODE")
     private fun isValidPass(password: String): Boolean {
-        val regex = "^(?=.*\\d)" +
-                "(?=.*[a-z])(?=.*[A-Z])" +
+        val regex = "^(?=.*\\d)" + "(?=.*[a-z])(?=.*[A-Z])" +
                 "(?=.*[!@#$%^&*()_+~`<>?:{}])" +
                 "(?=\\S+$).{8,20}$"
         val p: Pattern = Pattern.compile(regex)
