@@ -1,4 +1,4 @@
-package com.example.application.customClasses
+package com.example.application.LoginAndRegister.customClasses
 
 import android.content.Context
 import android.content.res.ColorStateList

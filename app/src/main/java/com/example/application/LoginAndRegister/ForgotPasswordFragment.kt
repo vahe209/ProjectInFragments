@@ -1,4 +1,4 @@
-package com.example.application
+package com.example.application.LoginAndRegister
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,8 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentForgotPasswordBinding
-import com.example.application.interfaces.Interfaces
+import com.example.application.LoginAndRegister.interfaces.Interfaces
+import com.example.application.R
 
 class ForgotPasswordFragment(
     private val createFragment: Interfaces.CreateFragment,

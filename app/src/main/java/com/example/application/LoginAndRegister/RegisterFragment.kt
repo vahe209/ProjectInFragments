@@ -1,4 +1,4 @@
-package com.example.application
+package com.example.application.LoginAndRegister
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,11 +14,12 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.application.adapter.CodesAdapter
-import com.example.application.data.PhoneCodesItem
+import com.example.application.LoginAndRegister.adapter.CodesAdapter
+import com.example.application.LoginAndRegister.data.CountryCodeItem
 import com.example.application.databinding.FragmentRegisterBinding
-import com.example.application.interfaces.Interfaces
-import com.example.application.viewModels.ViewModelRegisterActivity
+import com.example.application.LoginAndRegister.interfaces.Interfaces
+import com.example.application.LoginAndRegister.viewModels.ViewModelRegisterActivity
+import com.example.application.R
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -33,7 +34,7 @@ class RegisterFragment(
     private var validPassword: Boolean = false
     private var isChecked: Boolean = false
     private lateinit var viewModel: ViewModelRegisterActivity
-    private lateinit var selectedNumberCode: PhoneCodesItem
+    private lateinit var selectedNumberCode: CountryCodeItem
     private lateinit var fragmentEnterNumberCode: EnterNumberCodeFragment
 
     override fun onCreateView(
@@ -65,11 +66,15 @@ class RegisterFragment(
         }
         binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
             if (isValidPass(text.toString())) {
-                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(R.color.accent_7)))
+                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
+                    R.color.accent_7
+                )))
                 binding.passwordInputLayout.error = "Excellent"
                 validPassword = true
             } else {
-                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(R.color.accent_2)))
+                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
+                    R.color.accent_2
+                )))
                 binding.passwordInputLayout.error = null
                 validPassword = false
             }
@@ -78,13 +83,17 @@ class RegisterFragment(
             if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString()
                     .isNotEmpty()
             ) {
-                binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(R.color.accent_7)))
+                binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
+                    R.color.accent_7
+                )))
                 binding.confirmInputLayout.apply {
                     binding.confirmInputLayout.error = "Values match"
                 }
             } else {
                 binding.confirmInputLayout.apply {
-                    binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(R.color.accent_2)))
+                    binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
+                        R.color.accent_2
+                    )))
                     error = "Values do not match"
                 }
             }
@@ -261,7 +270,7 @@ class RegisterFragment(
         }
     }
 
-    override fun closeFragment(flag: String, numberCode: String, selectedItem: PhoneCodesItem) {
+    override fun closeFragment(flag: String, numberCode: String, selectedItem: CountryCodeItem) {
         fragmentEnterNumberCode.dismiss()
         viewModel.setSelectedNumberCode(selectedItem)
         binding.flag.text = flag

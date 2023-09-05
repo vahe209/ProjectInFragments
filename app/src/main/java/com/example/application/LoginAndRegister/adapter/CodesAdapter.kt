@@ -1,23 +1,23 @@
-package com.example.application.adapter
+package com.example.application.LoginAndRegister.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.application.R
-import com.example.application.RegisterFragment
-import com.example.application.data.PhoneCodesItem
+import com.example.application.LoginAndRegister.RegisterFragment
+import com.example.application.LoginAndRegister.data.CountryCodeItem
 
 class CodesAdapter(
-    private var codes: ArrayList<PhoneCodesItem>,
+    private var codes: ArrayList<CountryCodeItem>,
     private val closeFragment: RegisterFragment,
     private val context: Context,
-    private val selectedItem: PhoneCodesItem?
+    private val selectedItem: CountryCodeItem?
 ) : RecyclerView.Adapter<CodesAdapter.CodesViewHolder>() {
     private var closeOnClick: CloseFragment? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CodesViewHolder {
@@ -29,7 +29,7 @@ class CodesAdapter(
         return codes.size
     }
     @SuppressLint("NotifyDataSetChanged")
-    fun filterList(list: ArrayList<PhoneCodesItem>) {
+    fun filterList(list: ArrayList<CountryCodeItem>) {
         codes = list
         notifyDataSetChanged()
     }
@@ -57,9 +57,9 @@ class CodesAdapter(
         val numberCode: TextView = itemView.findViewById(R.id.number_code)
         val countryName: TextView = itemView.findViewById(R.id.country_name)
         val ifSelected: TextView = itemView.findViewById(R.id.if_selected)
-        val background: ConstraintLayout = itemView.findViewById(R.id.row_constraint)
+        val background: RelativeLayout = itemView.findViewById(R.id.row_constraint_bg)
     }
     interface CloseFragment {
-        fun closeFragment(flag: String, numberCode: String, selectedItem: PhoneCodesItem)
+        fun closeFragment(flag: String, numberCode: String, selectedItem: CountryCodeItem)
     }
 }

@@ -1,9 +1,9 @@
-package com.example.application.data
+package com.example.application.LoginAndRegister.data
 
 
 import com.google.gson.annotations.SerializedName
 
-data class PhoneCodesItem(
+data class CountryCodeItem(
     @SerializedName("code")
     val code: String,
     @SerializedName("dial_code")

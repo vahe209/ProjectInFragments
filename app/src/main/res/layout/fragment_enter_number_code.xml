@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:minHeight="700dp"
     android:paddingHorizontal="24dp"
-    tools:context=".EnterNumberCodeFragment">
+    tools:context=".LoginAndRegister.EnterNumberCodeFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/searchView"
@@ -15,7 +15,7 @@
         android:drawableStart="@drawable/icon_search"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:hint="@string/search_key"
+        android:hint="@string/search_country_key"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

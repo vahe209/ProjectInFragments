@@ -1,19 +1,14 @@
-package com.example.application
+package com.example.application.LoginAndRegister
 
 import android.content.Context
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.application.customClasses.serErrorTextAlignment
 import com.example.application.databinding.FragmentLoginBinding
-import com.example.application.interfaces.Interfaces
-import java.util.Objects
+import com.example.application.LoginAndRegister.interfaces.Interfaces
+import com.example.application.R
 
 class LoginFragment(
     private val context: Context,

@@ -1,4 +1,4 @@
-package com.example.application
+package com.example.application.LoginAndRegister
 
 import android.os.Bundle
 import android.os.Handler

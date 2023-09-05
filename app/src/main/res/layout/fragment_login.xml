@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/accent_1">
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_view" />
@@ -13,23 +12,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
+        android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:paddingBottom="100dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/unlock_title"
@@ -65,7 +54,6 @@
                     app:layout_constraintStart_toStartOf="@id/face_id"
                     app:layout_constraintTop_toBottomOf="@id/face_id"
                     app:track="@drawable/switch_compat_track" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/or_line"
@@ -75,7 +63,7 @@
                 android:src="@drawable/or_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/switch_btn" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/email_edit_title"
@@ -91,7 +79,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/or_line" />
 
-            <com.example.application.customClasses.CustomTextInputLayout
+            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
                 android:id="@+id/email_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -107,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
-            </com.example.application.customClasses.CustomTextInputLayout>
+            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/password_edit_title"
@@ -119,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="@+id/email_input_layout"
                 app:layout_constraintTop_toBottomOf="@+id/email_input_layout" />
 
-            <com.example.application.customClasses.CustomTextInputLayout
+            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
                 android:id="@+id/password_input_layout"
                 style="@style/PasswordLayoutStyle"
                 android:layout_width="match_parent"
@@ -135,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
-            </com.example.application.customClasses.CustomTextInputLayout>
+            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
 
 
             <androidx.appcompat.widget.AppCompatTextView

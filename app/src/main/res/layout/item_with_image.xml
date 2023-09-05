@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accent_1"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/item_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_play"
+        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintEnd_toEndOf="@id/image"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/TextWhite18"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_of_movie_key"
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category1"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/mystery_key"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/red_ball_iw1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/icon_red_ball"
+        app:layout_constraintBottom_toBottomOf="@id/category1"
+        app:layout_constraintStart_toEndOf="@id/category1"
+        app:layout_constraintTop_toTopOf="@id/category1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category2"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/mystery_key"
+        app:layout_constraintBottom_toBottomOf="@id/red_ball_iw1"
+        app:layout_constraintStart_toEndOf="@id/red_ball_iw1"
+        app:layout_constraintTop_toTopOf="@id/red_ball_iw1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/red_ball_iw2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/icon_red_ball"
+        app:layout_constraintBottom_toBottomOf="@id/category2"
+        app:layout_constraintStart_toEndOf="@id/category2"
+        app:layout_constraintTop_toTopOf="@id/category2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category3"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/mystery_key"
+        app:layout_constraintBottom_toBottomOf="@id/red_ball_iw2"
+        app:layout_constraintStart_toEndOf="@id/red_ball_iw2"
+        app:layout_constraintTop_toTopOf="@id/red_ball_iw2" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/posted_data_key"
+        app:layout_constraintBottom_toBottomOf="@+id/category3"
+        app:layout_constraintEnd_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/category3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

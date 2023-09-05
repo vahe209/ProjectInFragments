@@ -1,4 +1,4 @@
-package com.example.application.interfaces
+package com.example.application.LoginAndRegister.interfaces
 
 import androidx.fragment.app.Fragment
 

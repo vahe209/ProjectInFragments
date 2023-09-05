@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="700dp"
+    android:background="@color/accent_1"
     android:paddingHorizontal="24dp"
-    tools:context=".TermsAndConditionsFragment">
+    tools:context=".LoginAndRegister.TermsAndConditionsFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
@@ -15,7 +16,7 @@
         android:layout_marginTop="26dp"
         android:text="@string/terms_conditions_key"
         android:textColor="@color/white"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

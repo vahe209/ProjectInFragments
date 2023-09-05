@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:background="@color/accent_2"
-    tools:context=".WrongDataFragment">
+    tools:context=".LoginAndRegister.WrongDataFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_in_error_body"

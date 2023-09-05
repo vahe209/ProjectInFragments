@@ -1,4 +1,4 @@
-package com.example.application
+package com.example.application.LoginAndRegister
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,9 +10,10 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.application.adapter.CodesAdapter
+import com.example.application.LoginAndRegister.adapter.CodesAdapter
 import com.example.application.databinding.FragmentEnterNumberCodeBinding
-import com.example.application.data.PhoneCodesItem
+import com.example.application.LoginAndRegister.data.CountryCodeItem
+import com.example.application.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -22,10 +23,11 @@ import java.io.InputStream
 import java.util.*
 
 class EnterNumberCodeFragment(
-    private var selectedItem: PhoneCodesItem?,
-    private val closeFragmentEnterNumberCode: RegisterFragment): BottomSheetDialogFragment() {
+    private var selectedItem: CountryCodeItem?,
+    private val closeFragmentEnterNumberCode: RegisterFragment
+): BottomSheetDialogFragment() {
     private lateinit var binding: FragmentEnterNumberCodeBinding
-    private lateinit var items: ArrayList<PhoneCodesItem>
+    private lateinit var items: ArrayList<CountryCodeItem>
     private lateinit var adapter: CodesAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -69,8 +71,8 @@ class EnterNumberCodeFragment(
             json = inputStream.bufferedReader().use {
                 it.readText()
             }
-            items = Gson().fromJson(json, Array<PhoneCodesItem>::class.java)
-                .toList() as ArrayList<PhoneCodesItem>
+            items = Gson().fromJson(json, Array<CountryCodeItem>::class.java)
+                .toList() as ArrayList<CountryCodeItem>
             adapter =
                 CodesAdapter(items, closeFragmentEnterNumberCode, requireContext(), selectedItem)
             binding.rv.layoutManager =
@@ -82,7 +84,7 @@ class EnterNumberCodeFragment(
     }
 
     private fun filterCodes(string: String) {
-        val filteredCodes = ArrayList<PhoneCodesItem>()
+        val filteredCodes = ArrayList<CountryCodeItem>()
         for (item in items) {
             if (item.name.lowercase(Locale.getDefault())
                     .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(string)) {
