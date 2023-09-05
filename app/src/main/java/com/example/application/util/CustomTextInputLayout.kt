@@ -14,6 +14,7 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
     var errorTextGravity = TEXT_ALIGNMENT_VIEW_END
     var emptyStateMessage: Int = 0
     var isError: Boolean = false
+    var isSuccess: Boolean = false
     var errorTextView: TextView?
 
     init {
@@ -31,7 +32,8 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
                     R.styleable.CustomTextInputLayout_emptyStateErrorText,
                     0
                 )
-                errorTextView = this@CustomTextInputLayout.findViewById<TextView>(com.google.android.material.R.id.textinput_error)
+                errorTextView =
+                    this@CustomTextInputLayout.findViewById<TextView>(com.google.android.material.R.id.textinput_error)
                 if (errorTextView != null) {
                     errorTextView?.textAlignment = errorTextGravity
                 }
@@ -54,29 +56,6 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
         }*/
 
 
-    fun setErrorCondition(
-        isError: Boolean = this.editText?.text.isNullOrEmpty(),
-        errorText: CharSequence? = null
-    ) {
-        if (visibility != View.VISIBLE) {
-            this.isError = false
-            return
-        }
-        val text = if (editText?.text.isNullOrEmpty() && emptyStateMessage != 0) {
-            this.isError = true
-            resources.getText(emptyStateMessage)
-        } else {
-            this.isError = isError
-            errorText
-        }
-        error = if (this.isError)
-            text else {
-            isErrorEnabled = false
-            null
-        }
-        clearFocus()
-    }
-
     fun checkErrorCondition(
         condition: Boolean = this.editText?.text.isNullOrEmpty(),
         errorText: CharSequence? = null
@@ -93,12 +72,8 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
             errorText
         }
         error = if (this.isError) {
-            editText?.background = getDrawable(context, R.drawable.background_edit_text_error_state)
             text
         } else {
-            editText?.background =
-                getDrawable(context, R.drawable.background_edit_text_main_white_active)
-            isErrorEnabled = false
             null
         }
         clearFocus()
@@ -106,13 +81,19 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
 
     fun checkSuccessCondition(
         text: CharSequence,
-        condition: Boolean) {
-        error = if (condition) {
+        condition: Boolean
+    ) {
+        if (condition && !isSuccess) {
             setErrorTextColor(ColorStateList.valueOf(this.resources.getColor(R.color.green)))
-            text
-        } else {
+            boxStrokeErrorColor = ColorStateList.valueOf(this.resources.getColor(R.color.green))
+            error = text
+        }
+        isSuccess = condition
+        if (!condition) {
+            error = null
+            errorTextView?.visibility = View.GONE
             setErrorTextColor(ColorStateList.valueOf(this.resources.getColor(R.color.accent_2)))
-            null
+            boxStrokeErrorColor = ColorStateList.valueOf(this.resources.getColor(R.color.accent_2))
         }
     }
 

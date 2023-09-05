@@ -71,6 +71,7 @@
         <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
         <item name="boxStrokeWidthFocused">1dp</item>
         <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/accent_2</item>
         <item name="errorTextGravity">VIEW_END</item>
         <item name="hintEnabled">false</item>
     </style>
