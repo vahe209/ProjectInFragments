@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_constraint"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:id="@+id/row_constraint"
     android:background="@color/accent_3">
 
     <RelativeLayout
@@ -13,39 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/accent_5"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/flag"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
         android:gravity="center"
         android:text="🇺🇸"
+        android:textColor="@color/black"
         android:textSize="30sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/number_code"
-            style="@style/TextLightGrey14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+1"
-            android:textColor="@color/accent_4"
-            android:layout_toEndOf="@id/flag"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-           />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/number_code"
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/flag"
+        android:text="+1"
+        android:textColor="@color/accent_4" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/country_name"
         style="@style/TextWhite14"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/number_code"
         android:gravity="center"
-        android:text="United States" android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/number_code"
-            android:layout_marginStart="16dp"/>
+        android:text="United States" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/if_selected"
@@ -58,12 +58,11 @@
         android:text="SELECTED"
         android:textColor="@color/white"
         android:textSize="10sp"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/accent_4"
-        android:layout_below="@id/row_constraint_bg" />
+        android:layout_below="@id/row_constraint_bg"
+        android:background="@color/accent_4" />
 </RelativeLayout>
