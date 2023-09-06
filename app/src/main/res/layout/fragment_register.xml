@@ -130,11 +130,12 @@
 
             <View
                 android:id="@+id/choose_country_code"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/background_choose_country_view"
                 android:paddingEnd="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/phone_edit_tv"
                 app:layout_constraintStart_toStartOf="@id/phone_edit_tv"
                 app:layout_constraintTop_toBottomOf="@id/phone_edit_tv"
                 tools:ignore="RtlSymmetry" />
