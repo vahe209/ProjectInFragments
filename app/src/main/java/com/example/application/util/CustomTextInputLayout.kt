@@ -78,8 +78,8 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
         text: CharSequence, condition: Boolean
     ) {
         if (condition && !isSuccess) {
-            setErrorTextColor(ColorStateList.valueOf(this.resources.getColor(R.color.green)))
-            boxStrokeErrorColor = ColorStateList.valueOf(this.resources.getColor(R.color.green))
+            setErrorTextColor(ColorStateList.valueOf(this.resources.getColor(R.color.accent_7)))
+            boxStrokeErrorColor = ColorStateList.valueOf(this.resources.getColor(R.color.accent_7))
             error = text
         }
         isSuccess = condition
