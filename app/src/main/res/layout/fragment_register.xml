@@ -120,6 +120,7 @@
                 android:id="@+id/phone_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
+                android:minWidth="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="start|center_vertical"
