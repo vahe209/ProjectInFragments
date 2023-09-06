@@ -81,7 +81,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/or_line" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/email_input_layout"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/password_edit_title"
@@ -109,7 +109,7 @@
                 app:layout_constraintStart_toStartOf="@+id/email_input_layout"
                 app:layout_constraintTop_toBottomOf="@+id/email_input_layout" />
 
-            <com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout
+            <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/password_input_layout"
                 style="@style/PasswordLayoutStyle"
                 android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
-            </com.example.application.LoginAndRegister.customClasses.CustomTextInputLayout>
+            </com.example.application.util.CustomTextInputLayout>
 
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="TextWhite14" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
@@ -10,6 +11,7 @@
         <item name="android:textColor">@color/accent_4</item>
     </style>
     ///////////////////
+
     <style name="TextLightGrey16" parent="TextLightGrey14">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/accent_4</item>
@@ -56,14 +58,12 @@
     </style>
 
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxBackgroundColor">@color/accent_3</item>
         <item name="boxBackgroundMode">outline</item>
-        <item name="colorAccent">@color/white</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/main_button_corner_radius</item>
         <item name="boxCornerRadiusBottomStart">@dimen/main_button_corner_radius</item>
         <item name="boxCornerRadiusTopStart">@dimen/main_button_corner_radius</item>
         <item name="boxCornerRadiusTopEnd">@dimen/main_button_corner_radius</item>
-        <item name="boxStrokeColor">@color/white</item>
         <item name="boxStrokeErrorColor">@null</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="errorIconDrawable">@null</item>
@@ -71,15 +71,16 @@
         <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
         <item name="boxStrokeWidthFocused">1dp</item>
         <item name="errorEnabled">true</item>
-       <item name="errorTextGravity">VIEW_END</item>
+        <item name="errorTextColor">@color/accent_2</item>
+        <item name="errorTextGravity">VIEW_END</item>
         <item name="hintEnabled">false</item>
     </style>
 
     <style name="PasswordLayoutStyle" parent="TextInputLayoutStyle">
-           <item name="endIconMode">@null</item>
+        <item name="endIconMode">password_toggle</item>
         <item name="passwordToggleTint">@color/accent_4</item>
         <item name="passwordToggleEnabled">true</item>
-       </style>
+    </style>
 
     <style name="TextInputWithIconStyle" parent="TextInputLayoutStyle"></style>
 
