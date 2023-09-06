@@ -29,53 +29,53 @@ class ForgotPasswordFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.toolbar.iconBack.setOnClickListener {
+        binding.toolbar.iconBackImg.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
-        binding.box1.doOnTextChanged { text, _, _, _ ->
+        binding.box1Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box2.requestFocus()
+                    binding.box2Edt.requestFocus()
                     checkFields()
                 }
             }
         }
-        binding.box2.doOnTextChanged { text, _, _, _ ->
+        binding.box2Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box3.requestFocus()
+                    binding.box3Edt.requestFocus()
                     checkFields()
                 }
             }
         }
-        binding.box3.doOnTextChanged { text, _, _, _ ->
+        binding.box3Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box4.requestFocus()
+                    binding.box4Edt.requestFocus()
                     checkFields()
                 }
             }
         }
-        binding.box4.doOnTextChanged { text, _, _, _ ->
+        binding.box4Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box5.requestFocus()
+                    binding.box5Edt.requestFocus()
                     checkFields()
                 }
             }
         }
-        binding.box5.doOnTextChanged { text, _, _, _ ->
+        binding.box5Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box6.requestFocus()
+                    binding.box6Edt.requestFocus()
                     checkFields()
                 }
             }
         }
-        binding.box6.doOnTextChanged { text, _, _, _ ->
+        binding.box6Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
                 if (text.isNotEmpty()) {
-                    binding.box6.clearFocus()
+                    binding.box6Edt.clearFocus()
                     checkFields()
                 }
             }
@@ -84,7 +84,7 @@ class ForgotPasswordFragment(
             if (userInfoEdit()) {
                 binding.sendCodeBtn.isVisible = false
                 binding.sendCodeLayout.isVisible = true
-                binding.forgotPassEdit.isFocusable = false
+                binding.forgotPassEdt.isFocusable = false
             }
         }
         val callback = object : OnBackPressedCallback(true) {
@@ -97,7 +97,7 @@ class ForgotPasswordFragment(
     }
 
     private fun userInfoEdit(): Boolean {
-        return if (binding.forgotPassEdit.text.toString().isNotEmpty()) {
+        return if (binding.forgotPassEdt.text.toString().isNotEmpty()) {
             true
         } else {
             openErrorFragment()
@@ -106,7 +106,7 @@ class ForgotPasswordFragment(
     }
 
     private fun openErrorFragment() {
-        binding.toolbar.iconBack.isVisible = false
+        binding.toolbar.iconBackImg.isVisible = false
         binding.toolbar.toolbarTitleTv.isVisible = false
         val wrongDataFragment =
             WrongDataFragment(resources.getString(R.string.enter_email_or_phone_error_key))
@@ -116,7 +116,7 @@ class ForgotPasswordFragment(
     }
 
     override fun onCloseButtonPressed() {
-        binding.toolbar.iconBack.isVisible = true
+        binding.toolbar.iconBackImg.isVisible = true
         binding.toolbar.toolbarTitleTv.isVisible = true
         val fragment = activity?.supportFragmentManager?.findFragmentById(R.id.toolbar)
         if (fragment is WrongDataFragment) {
@@ -125,12 +125,12 @@ class ForgotPasswordFragment(
     }
 
     private fun checkFields() {
-        val box1 = binding.box1.text.toString().isNotEmpty()
-        val box2 = binding.box2.text.toString().isNotEmpty()
-        val box3 = binding.box3.text.toString().isNotEmpty()
-        val box4 = binding.box4.text.toString().isNotEmpty()
-        val box5 = binding.box5.text.toString().isNotEmpty()
-        val box6 = binding.box6.text.toString().isNotEmpty()
+        val box1 = binding.box5Edt.text.toString().isNotEmpty()
+        val box2 = binding.box5Edt.text.toString().isNotEmpty()
+        val box3 = binding.box5Edt.text.toString().isNotEmpty()
+        val box4 = binding.box5Edt.text.toString().isNotEmpty()
+        val box5 = binding.box5Edt.text.toString().isNotEmpty()
+        val box6 = binding.box6Edt.text.toString().isNotEmpty()
         if (box1 && box2 && box3 && box4 && box5 && box6) {
             createFragment.createFragment(SetNewPasswordFragment(context, createFragment))
         }

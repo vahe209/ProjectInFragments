@@ -10,7 +10,7 @@
     tools:context=".LoginAndRegister.EnterNumberCodeFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/searchView"
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:drawableStart="@drawable/icon_search"
@@ -34,26 +34,25 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
+        android:id="@+id/codes_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/accent_teast"
+        android:background="@color/accent_4_opp_04"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/searchView"
         tools:itemCount="10"
         tools:listitem="@layout/item_country_code_row" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/nothing_found_text"
+        android:id="@+id/nothing_found_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="Nothing found"
+        android:text="@string/nothing_found_key"
         android:textColor="@color/accent_4"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/rv" />
+        app:layout_constraintTop_toBottomOf="@id/codes_recycler" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

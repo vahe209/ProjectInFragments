@@ -26,12 +26,11 @@
             android:paddingBottom="50dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fName_edit_title"
+                android:id="@+id/fName_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-
                 android:layout_marginTop="24dp"
                 android:gravity="start|center_vertical"
                 android:lineSpacingExtra="5sp"
@@ -48,10 +47,10 @@
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fName_edit_title">
+                app:layout_constraintTop_toBottomOf="@id/fName_edit_tv">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/fName_edit"
+                    android:id="@+id/fName_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -59,7 +58,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/lName_edit_title"
+                android:id="@+id/lName_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -77,10 +76,10 @@
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lName_edit_title">
+                app:layout_constraintTop_toBottomOf="@id/lName_edit_tv">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/lName_edit"
+                    android:id="@+id/lName_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -88,7 +87,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/email_edit_title"
+                android:id="@+id/email_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -105,12 +104,12 @@
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@null"
-                app:layout_constraintEnd_toEndOf="@id/email_edit_title"
-                app:layout_constraintStart_toStartOf="@id/email_edit_title"
-                app:layout_constraintTop_toBottomOf="@id/email_edit_title">
+                app:layout_constraintEnd_toEndOf="@id/email_edit_tv"
+                app:layout_constraintStart_toStartOf="@id/email_edit_tv"
+                app:layout_constraintTop_toBottomOf="@id/email_edit_tv">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/email_edit"
+                    android:id="@+id/email_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -118,7 +117,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/phone_edit_title"
+                android:id="@+id/phone_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,12 +135,12 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/background_choose_country_view"
                 android:paddingEnd="24dp"
-                app:layout_constraintStart_toStartOf="@id/phone_edit_title"
-                app:layout_constraintTop_toBottomOf="@id/phone_edit_title"
+                app:layout_constraintStart_toStartOf="@id/phone_edit_tv"
+                app:layout_constraintTop_toBottomOf="@id/phone_edit_tv"
                 tools:ignore="RtlSymmetry" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/flag"
+                android:id="@+id/flag_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
@@ -154,16 +153,16 @@
                 app:layout_constraintTop_toTopOf="@id/choose_country_code" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/dropdown_arrow"
+                android:id="@+id/dropdown_arrow_img"
                 android:layout_width="10dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
                 android:src="@drawable/icon_bottom_arrow"
-                app:layout_constraintBottom_toBottomOf="@id/flag"
+                app:layout_constraintBottom_toBottomOf="@id/flag_tv"
                 app:layout_constraintEnd_toEndOf="@+id/choose_country_code"
-                app:layout_constraintStart_toEndOf="@id/flag"
-                app:layout_constraintTop_toTopOf="@id/flag" />
+                app:layout_constraintStart_toEndOf="@id/flag_tv"
+                app:layout_constraintTop_toTopOf="@id/flag_tv" />
 
 
             <com.example.application.util.CustomTextInputLayout
@@ -171,9 +170,7 @@
                 style="@style/TextInputLayoutStyleLeftBorderRadius"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
                 app:expandedHintEnabled="false"
-                app:layout_constraintBottom_toBottomOf="@id/choose_country_code"
                 app:layout_constraintEnd_toEndOf="@id/email_input_layout"
                 app:layout_constraintStart_toEndOf="@id/choose_country_code"
                 app:layout_constraintTop_toTopOf="@id/choose_country_code"
@@ -181,15 +178,16 @@
                 app:prefixTextColor="@color/accent_4">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/phone_edit"
+                    android:id="@+id/phone_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
                     android:inputType="phone" />
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/password_edit_title"
+                android:id="@+id/password_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -207,10 +205,10 @@
                 app:helperText="@string/helper_text_key"
                 app:helperTextEnabled="true"
                 app:helperTextTextColor="@color/accent_4"
-                app:layout_constraintTop_toBottomOf="@id/password_edit_title">
+                app:layout_constraintTop_toBottomOf="@id/password_edit_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_edit"
+                    android:id="@+id/password_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -218,7 +216,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/confirm_edit_title"
+                android:id="@+id/confirm_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -234,12 +232,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 app:errorEnabled="true"
-                app:layout_constraintTop_toBottomOf="@id/confirm_edit_title"
+                app:layout_constraintTop_toBottomOf="@id/confirm_edit_tv"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/accent_4">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/confirm_edit"
+                    android:id="@+id/confirm_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -247,7 +245,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/agreement_checkbox"
+                android:id="@+id/agreement_checkbox_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/accent_4"
@@ -255,29 +253,29 @@
                 app:layout_constraintTop_toBottomOf="@id/confirm_input_layout" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/agreement_text_1"
+                android:id="@+id/agreement_tv1"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@string/accept_the_key"
-                app:layout_constraintBottom_toBottomOf="@id/agreement_checkbox"
-                app:layout_constraintStart_toEndOf="@id/agreement_checkbox"
-                app:layout_constraintTop_toTopOf="@id/agreement_checkbox" />
+                app:layout_constraintBottom_toBottomOf="@id/agreement_checkbox_btn"
+                app:layout_constraintStart_toEndOf="@id/agreement_checkbox_btn"
+                app:layout_constraintTop_toTopOf="@id/agreement_checkbox_btn" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/agreement_text_2"
+                android:id="@+id/agreement_tv2"
                 style="@style/TextBlue14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@string/terms_conditions_key"
-                app:layout_constraintBottom_toBottomOf="@id/agreement_text_1"
-                app:layout_constraintStart_toEndOf="@id/agreement_text_1"
-                app:layout_constraintTop_toTopOf="@id/agreement_text_1" />
+                app:layout_constraintBottom_toBottomOf="@id/agreement_tv1"
+                app:layout_constraintStart_toEndOf="@id/agreement_tv1"
+                app:layout_constraintTop_toTopOf="@id/agreement_tv1" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_join"
+                android:id="@+id/join_btn"
                 style="@style/MainRedButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -285,7 +283,7 @@
                 android:text="@string/join_key"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/agreement_checkbox" />
+                app:layout_constraintTop_toBottomOf="@id/agreement_checkbox_btn" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/login_layout"
@@ -293,21 +291,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@id/btn_join"
-                app:layout_constraintStart_toStartOf="@id/btn_join"
-                app:layout_constraintTop_toBottomOf="@id/btn_join">
+                app:layout_constraintEnd_toEndOf="@id/join_btn"
+                app:layout_constraintStart_toStartOf="@id/join_btn"
+                app:layout_constraintTop_toBottomOf="@id/join_btn">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/have_account_text"
+                    android:id="@+id/have_account_tv"
                     style="@style/TextLightGrey14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/do_have_an_account_key"
-                    app:layout_constraintStart_toStartOf="@id/btn_login"
-                    app:layout_constraintTop_toBottomOf="@id/btn_login" />
+                    app:layout_constraintStart_toStartOf="@id/join_btn"
+                    app:layout_constraintTop_toBottomOf="@id/join_btn" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_for_login"
+                    android:id="@+id/for_login_tv"
                     style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"

@@ -24,7 +24,7 @@ class SuccssedPasswordChangeFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnLogin.setOnClickListener {
+        binding.loginBtn.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
         val callback = object : OnBackPressedCallback(true) {

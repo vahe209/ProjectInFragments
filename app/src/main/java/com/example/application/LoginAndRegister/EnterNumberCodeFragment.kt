@@ -79,9 +79,9 @@ class EnterNumberCodeFragment(
                 .toList() as ArrayList<CountryCodeItem>
             adapter =
                 CodesAdapter(items, closeFragmentEnterNumberCode, requireContext(), selectedItem)
-            binding.rv.layoutManager =
+            binding.codesRecycler.layoutManager =
                 LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-            binding.rv.adapter = adapter
+            binding.codesRecycler.adapter = adapter
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -96,10 +96,10 @@ class EnterNumberCodeFragment(
                 )
             ) {
                 filteredCodes.add(item)
-                binding.nothingFoundText.isVisible = false
+                binding.nothingFoundTv.isVisible = false
             }
             if (filteredCodes.isEmpty()) {
-                binding.nothingFoundText.isVisible = true
+                binding.nothingFoundTv.isVisible = true
             }
             adapter.filterList(filteredCodes)
         }

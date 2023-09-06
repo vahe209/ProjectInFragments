@@ -15,7 +15,10 @@
 
     <color name="accent_3">#322F3E</color>
     <color name="accent_4">#9C9C9C</color>
-    <color name="accent_teast">#669C9C9C</color>
+    <color name="accent_4_opp_04">#669C9C9C</color>
     <color name="accent_5">#0086F8</color>
     <color name="accent_6">#F79E1B</color>
+
+
+    <color name="mtrl_textinput_default_box_stroke_color">#322F3E</color>
 </resources>

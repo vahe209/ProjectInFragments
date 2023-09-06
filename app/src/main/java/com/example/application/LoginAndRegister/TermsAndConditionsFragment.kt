@@ -34,7 +34,7 @@ class TermsAndConditionsFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.iconClose.setOnClickListener {
+        binding.iconCloseImg.setOnClickListener {
             dismiss()
         }
     }

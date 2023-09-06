@@ -15,8 +15,8 @@ import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
 
 class SetNewPasswordFragment(
-    private val context: Context, private val createFragment: Interfaces.CreateFragment
-) : Fragment() {
+    private val context: Context,
+    private val createFragment: Interfaces.CreateFragment) : Fragment() {
     private lateinit var binding: FragmentSetNewPasswordBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -29,26 +29,26 @@ class SetNewPasswordFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var validPassword = false
-        binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
+        binding.passwordEdt.doOnTextChanged { text, _, _, _ ->
             if (text?.isNotEmpty() == true) validPassword =
                 text.toString().checkPattern(PASSWORD_PATTERN)
             binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
         }
-        binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
-            if (binding.passwordEdit.text.toString().isNotEmpty() && validPassword) {
+        binding.confirmEdt.doOnTextChanged { text, _, _, _ ->
+            if (binding.passwordEdt.text.toString().isNotEmpty() && validPassword) {
                 binding.confirmInputLayout.checkSuccessCondition(
-                    "Values match", text.toString() == binding.passwordEdit.text.toString()
+                    "Values match", text.toString() == binding.passwordEdt.text.toString()
                 )
             } else {
                 binding.confirmInputLayout.error = "Values do not match"
             }
         }
-        binding.toolbar.iconBack.setOnClickListener {
+        binding.toolbar.iconBackImg.setOnClickListener {
             createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
         }
-        binding.completeChanges.setOnClickListener {
+        binding.completeChangesBtn.setOnClickListener {
             if (validPassword) {
-                if (binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()) {
+                if (binding.passwordEdt.text.toString() == binding.confirmEdt.text.toString()) {
                     createFragment.createFragment(
                         SuccssedPasswordChangeFragment(
                             context, createFragment
@@ -65,7 +65,6 @@ class SetNewPasswordFragment(
             override fun handleOnBackPressed() {
                 createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
             }
-
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
     }

@@ -26,23 +26,23 @@ class LoginFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textForRegistration.setOnClickListener {
+        binding.forRegisterTv.setOnClickListener {
             createFragment.createFragment(RegisterFragment(context, createFragment))
         }
-        binding.btnLogin.setOnClickListener {
+        binding.loginBtn.setOnClickListener {
             val isLoginValid = checkEmail()
             val isPasswordValid = checkPassword()
             if (isLoginValid && isPasswordValid) {
                 // TODO:  login call
             }
         }
-        binding.forgotPassText.setOnClickListener {
+        binding.forgotPassTv.setOnClickListener {
             createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
         }
     }
 
     private fun checkPassword(): Boolean {
-        return if (binding.passwordEdit.text.toString().isEmpty()) {
+        return if (binding.passwordEdt.text.toString().isEmpty()) {
             binding.passwordInputLayout.error = "Password is required"
             false
         } else {
@@ -52,7 +52,7 @@ class LoginFragment(
     }
 
     private fun checkEmail(): Boolean {
-        return if (binding.emailEdit.text.toString().isEmpty()) {
+        return if (binding.emailEdt.text.toString().isEmpty()) {
             binding.emailInputLayout.error = "Email is required"
             false
         } else {

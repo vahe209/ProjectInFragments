@@ -7,7 +7,7 @@
     android:paddingBottom="16dp">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -17,34 +17,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/btn_play"
+        android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_play"
-        app:layout_constraintBottom_toBottomOf="@id/image"
-        app:layout_constraintEnd_toEndOf="@id/image"
-        app:layout_constraintStart_toStartOf="@id/image"
-        app:layout_constraintTop_toTopOf="@id/image" />
+        app:layout_constraintBottom_toBottomOf="@id/image_img"
+        app:layout_constraintEnd_toEndOf="@id/image_img"
+        app:layout_constraintStart_toStartOf="@id/image_img"
+        app:layout_constraintTop_toTopOf="@id/image_img" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title"
+        android:id="@+id/title_tv"
         style="@style/TextWhite18"
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_of_movie_key"
-        app:layout_constraintStart_toStartOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintStart_toStartOf="@+id/image_img"
+        app:layout_constraintTop_toBottomOf="@id/image_img" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category1"
+        android:id="@+id/category1_tv"
         style="@style/TextWhite14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/mystery_key"
-        app:layout_constraintStart_toStartOf="@id/title"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/red_ball_iw1"
@@ -52,12 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:src="@drawable/icon_red_ball"
-        app:layout_constraintBottom_toBottomOf="@id/category1"
-        app:layout_constraintStart_toEndOf="@id/category1"
-        app:layout_constraintTop_toTopOf="@id/category1" />
+        app:layout_constraintBottom_toBottomOf="@id/category1_tv"
+        app:layout_constraintStart_toEndOf="@id/category1_tv"
+        app:layout_constraintTop_toTopOf="@id/category1_tv" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category2"
+        android:id="@+id/category2_tv"
         style="@style/TextWhite14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,12 +73,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:src="@drawable/icon_red_ball"
-        app:layout_constraintBottom_toBottomOf="@id/category2"
-        app:layout_constraintStart_toEndOf="@id/category2"
-        app:layout_constraintTop_toTopOf="@id/category2" />
+        app:layout_constraintBottom_toBottomOf="@id/category2_tv"
+        app:layout_constraintStart_toEndOf="@id/category2_tv"
+        app:layout_constraintTop_toTopOf="@id/category2_tv" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category3"
+        android:id="@+id/category3_tv"
         style="@style/TextWhite14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,8 +94,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/posted_data_key"
-        app:layout_constraintBottom_toBottomOf="@+id/category3"
-        app:layout_constraintEnd_toEndOf="@+id/image"
-        app:layout_constraintTop_toTopOf="@+id/category3" />
+        app:layout_constraintBottom_toBottomOf="@+id/category3_tv"
+        app:layout_constraintEnd_toEndOf="@+id/image_img"
+        app:layout_constraintTop_toTopOf="@+id/category3_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

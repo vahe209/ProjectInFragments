@@ -64,10 +64,10 @@ class CodesAdapter(
     }
 
     class CodesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val flag: TextView = itemView.findViewById(R.id.flag)
-        val numberCode: TextView = itemView.findViewById(R.id.number_code)
-        val countryName: TextView = itemView.findViewById(R.id.country_name)
-        val ifSelected: TextView = itemView.findViewById(R.id.if_selected)
+        val flag: TextView = itemView.findViewById(R.id.flag_tv)
+        val numberCode: TextView = itemView.findViewById(R.id.number_code_tv)
+        val countryName: TextView = itemView.findViewById(R.id.country_name_tv)
+        val ifSelected: TextView = itemView.findViewById(R.id.if_selected_tv)
         val background: RelativeLayout = itemView.findViewById(R.id.row_constraint)
     }
 

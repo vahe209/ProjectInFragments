@@ -3,6 +3,7 @@ package com.example.application.LoginAndRegister
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,10 +48,10 @@ class RegisterFragment(
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ViewModelRegisterActivity::class.java]
         if (arguments != null) {
-            binding.flag.text = arguments?.getString("flag")
+            binding.flagTv.text = arguments?.getString("flag")
             binding.phoneInputLayout.prefixText = arguments?.getString("numberCode")
         }
-        binding.toolbar.iconBack.setOnClickListener {
+        binding.toolbar.iconBackImg.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
         binding.chooseCountryCode.setOnClickListener {
@@ -58,39 +59,53 @@ class RegisterFragment(
             fragmentEnterNumberCode = EnterNumberCodeFragment(selectedNumberCode, this)
             openFragment(fragmentEnterNumberCode)
         }
-        binding.textForLogin.setOnClickListener {
+        binding.forLoginTv.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
-        binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
+        binding.passwordEdt.doOnTextChanged { text, _, _, _ ->
             validPassword = text?.toString().checkPattern(PASSWORD_PATTERN)
             binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
         }
-        binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
-            if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString()
+        binding.confirmEdt.doOnTextChanged { text, _, _, _ ->
+            if (text.toString() == binding.passwordEdt.text.toString() && binding.passwordEdt.text.toString()
                     .isNotEmpty()
             ) {
                 binding.confirmInputLayout.checkSuccessCondition(
-                    "Values match", text.toString() == binding.passwordEdit.text.toString()
+                    "Values match", text.toString() == binding.passwordEdt.text.toString()
                 )
             } else {
                 binding.confirmInputLayout.error = "Values do not match"
             }
         }
-        binding.agreementCheckbox.setOnCheckedChangeListener { _, isChecked ->
+        binding.agreementCheckboxBtn.setOnCheckedChangeListener { _, isChecked ->
             this.isChecked = isChecked
         }
-        binding.btnJoin.setOnClickListener {
-            val isFistNameValid = checkFirstName(binding.fNameEdit.text.toString())
-            val isLastNameValid = checkLastName(binding.lNameEdit.text.toString())
-            val isEmailValid = checkEmail(binding.emailEdit.text.toString())
-            val isPhoneValid = checkPhone(binding.phoneEdit.text.toString())
-            val isPasswordValid = checkPass(binding.passwordEdit.text.toString())
-            val isConfirmPassValid = checkConfirmPass(binding.confirmEdit.text.toString())
+        binding.joinBtn.setOnClickListener {
+            val isFistNameValid = checkFirstName(binding.fNameEdt.text.toString())
+            val isLastNameValid = checkLastName(binding.lNameEdt.text.toString())
+            val isEmailValid = checkEmail(binding.emailEdt.text.toString())
+            val isPhoneValid = checkPhone(binding.phoneEdt.text.toString())
+            val isPasswordValid = checkPass(binding.passwordEdt.text.toString())
+            val isConfirmPassValid = checkConfirmPass(binding.confirmEdt.text.toString())
             val isCheckBoxChecked = checkBoxIsChecked()
-            if (!isFistNameValid || !isLastNameValid || !isEmailValid || !isPhoneValid || !isPasswordValid || !isConfirmPassValid || !isCheckBoxChecked || binding.passwordEdit.text.toString() != binding.confirmEdit.text.toString()) {
+            if (!isFistNameValid ||
+                !isLastNameValid ||
+                !isEmailValid ||
+                !isPhoneValid ||
+                !isPasswordValid ||
+                !isConfirmPassValid ||
+                !isCheckBoxChecked ||
+                binding.passwordEdt.text.toString() != binding.confirmEdt.text.toString()) {
                 openErrorFragment()
             }
-            if (isFistNameValid && isLastNameValid && isEmailValid && isPhoneValid && isPasswordValid && isConfirmPassValid && isCheckBoxChecked && binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()) {
+            if (isFistNameValid &&
+                isLastNameValid &&
+                isEmailValid &&
+                isPhoneValid &&
+                isPasswordValid &&
+                isConfirmPassValid &&
+                isCheckBoxChecked &&
+                binding.passwordEdt.text.toString() == binding.confirmEdt.text.toString()) {
                 // TODO:  registerCall
                 Toast.makeText(context, "Everything is working", Toast.LENGTH_SHORT).show()
             }
@@ -101,19 +116,19 @@ class RegisterFragment(
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
-        binding.agreementText2.setOnClickListener {
+        binding.agreementTv2.setOnClickListener {
             openFragment(TermsAndConditionsFragment())
         }
     }
 
     private fun checkBoxIsChecked(): Boolean {
         return if (isChecked) {
-            binding.agreementText1.setTextColor(ContextCompat.getColor(context, R.color.white))
-            binding.agreementText2.setTextColor(ContextCompat.getColor(context, R.color.accent_5))
+            binding.agreementTv1.setTextColor(ContextCompat.getColor(context, R.color.white))
+            binding.agreementTv2.setTextColor(ContextCompat.getColor(context, R.color.accent_5))
             true
         } else {
-            binding.agreementText1.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
-            binding.agreementText2.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
+            binding.agreementTv1.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
+            binding.agreementTv2.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
             false
         }
     }
@@ -201,7 +216,7 @@ class RegisterFragment(
     }
 
     private fun openErrorFragment() {
-        binding.toolbar.iconBack.isVisible = false
+        binding.toolbar.iconBackImg.isVisible = false
         binding.toolbar.toolbarTitleTv.isVisible = false
         val wrongDataFragment =
             WrongDataFragment(resources.getString(R.string.invalid_email_or_phone_key))
@@ -211,7 +226,7 @@ class RegisterFragment(
     }
 
     override fun onCloseButtonPressed() {
-        binding.toolbar.iconBack.isVisible = true
+        binding.toolbar.iconBackImg.isVisible = true
         binding.toolbar.toolbarTitleTv.isVisible = true
         val fragment = activity?.supportFragmentManager?.findFragmentById(R.id.toolbar)
         if (fragment is WrongDataFragment) {
@@ -222,7 +237,7 @@ class RegisterFragment(
     override fun closeFragment(flag: String, numberCode: String, selectedItem: CountryCodeItem) {
         fragmentEnterNumberCode.dismiss()
         viewModel.setSelectedNumberCode(selectedItem)
-        binding.flag.text = flag
+        binding.flagTv.text = flag
         binding.phoneInputLayout.prefixText = numberCode
     }
 }

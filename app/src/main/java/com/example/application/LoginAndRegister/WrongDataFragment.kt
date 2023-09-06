@@ -22,13 +22,13 @@ class WrongDataFragment(private val textFromFragment: String) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentWrongDataBinding.inflate(layoutInflater, container, false)
-        binding.textInErrorBody.text = this.textFromFragment
+        binding.errorTv.text = this.textFromFragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.close.setOnClickListener {
+        binding.iconCloseImg.setOnClickListener {
             fragmentInteractionListener?.onCloseButtonPressed()
         }
         startAutoCloseTimer()

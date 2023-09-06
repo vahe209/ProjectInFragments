@@ -27,7 +27,7 @@
             android:layout_marginTop="32dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/unlock_title"
+                android:id="@+id/unlock_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -41,14 +41,14 @@
                 tools:targetApi="p" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/face_id"
+                android:id="@+id/face_id_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="24dp"
                 android:src="@drawable/icon_face_id"
-                app:layout_constraintEnd_toEndOf="@id/unlock_title"
-                app:layout_constraintStart_toStartOf="@id/unlock_title"
-                app:layout_constraintTop_toBottomOf="@id/unlock_title" />
+                app:layout_constraintEnd_toEndOf="@id/unlock_title_tv"
+                app:layout_constraintStart_toStartOf="@id/unlock_title_tv"
+                app:layout_constraintTop_toBottomOf="@id/unlock_title_tv" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch_btn"
@@ -56,13 +56,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:thumb="@drawable/switch_compat_thumb"
-                app:layout_constraintEnd_toEndOf="@id/face_id"
-                app:layout_constraintStart_toStartOf="@id/face_id"
-                app:layout_constraintTop_toBottomOf="@id/face_id"
+                app:layout_constraintEnd_toEndOf="@id/face_id_img"
+                app:layout_constraintStart_toStartOf="@id/face_id_img"
+                app:layout_constraintTop_toBottomOf="@id/face_id_img"
                 app:track="@drawable/switch_compat_track" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/or_line"
+                android:id="@+id/or_line_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/switch_btn" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/email_edit_title"
+                android:id="@+id/email_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                 android:paddingBottom="4dp"
                 android:text="@string/email_key"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/or_line" />
+                app:layout_constraintTop_toBottomOf="@id/or_line_img" />
 
             <com.example.application.util.CustomTextInputLayout
                 android:id="@+id/email_input_layout"
@@ -93,10 +93,10 @@
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/email_edit_title">
+                app:layout_constraintTop_toBottomOf="@id/email_edit_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email_edit"
+                    android:id="@+id/email_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -104,7 +104,7 @@
             </com.example.application.util.CustomTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/password_edit_title"
+                android:id="@+id/password_edit_tv"
                 style="@style/TextWhite14"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -121,10 +121,10 @@
                 android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_edit_title">
+                app:layout_constraintTop_toBottomOf="@id/password_edit_tv">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/password_edit"
+                    android:id="@+id/password_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/forgot_pass_text"
+                android:id="@+id/forgot_pass_tv"
                 style="@style/TextBlue14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
                 app:layout_constraintTop_toBottomOf="@id/password_input_layout" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_login"
+                android:id="@+id/login_btn"
                 style="@style/MainRedButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
                 android:text="@string/login_key"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/forgot_pass_text" />
+                app:layout_constraintTop_toBottomOf="@id/forgot_pass_tv" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/register_layout"
@@ -158,21 +158,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@id/btn_login"
-                app:layout_constraintStart_toStartOf="@id/btn_login"
-                app:layout_constraintTop_toBottomOf="@id/btn_login">
+                app:layout_constraintEnd_toEndOf="@id/login_btn"
+                app:layout_constraintStart_toStartOf="@id/login_btn"
+                app:layout_constraintTop_toBottomOf="@id/login_btn">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/have_account_text"
+                    android:id="@+id/have_account_tv"
                     style="@style/TextLightGrey14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/do_have_an_account_key"
-                    app:layout_constraintStart_toStartOf="@id/btn_login"
-                    app:layout_constraintTop_toBottomOf="@id/btn_login" />
+                    app:layout_constraintStart_toStartOf="@id/login_btn"
+                    app:layout_constraintTop_toBottomOf="@id/login_btn" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_for_registration"
+                    android:id="@+id/for_register_tv"
                     style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
