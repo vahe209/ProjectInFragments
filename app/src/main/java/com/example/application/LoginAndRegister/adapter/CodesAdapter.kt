@@ -21,7 +21,7 @@ class CodesAdapter(
 ) : RecyclerView.Adapter<CodesAdapter.CodesViewHolder>() {
     private var closeOnClick: CloseFragment? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CodesViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.country_code_item_row, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_country_code_row, parent, false)
         closeOnClick = closeFragment
         return CodesViewHolder(view)
     }

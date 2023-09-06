@@ -3,6 +3,7 @@ package com.example.application.LoginAndRegister
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,7 +54,7 @@ class RegisterFragment(
         viewModel = ViewModelProvider(this)[ViewModelRegisterActivity::class.java]
         if (arguments != null) {
             binding.flag.text = arguments?.getString("flag")
-            binding.numberCodeFixed.text = arguments?.getString("numberCode")
+            binding.phoneInputLayout.prefixText = arguments?.getString("numberCode")
         }
         binding.toolbar.iconBack.setOnClickListener {
             createFragment.createFragment(LoginFragment(context, createFragment))
@@ -84,9 +85,7 @@ class RegisterFragment(
             }*/
         }
         binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
-            if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString()
-                    .isNotEmpty()
-            ) {
+            if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString().isNotEmpty()) {
                 binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
                     R.color.accent_7
                 )))
@@ -277,6 +276,6 @@ class RegisterFragment(
         fragmentEnterNumberCode.dismiss()
         viewModel.setSelectedNumberCode(selectedItem)
         binding.flag.text = flag
-        binding.numberCodeFixed.text = numberCode
+        binding.phoneInputLayout.prefixText = numberCode
     }
 }

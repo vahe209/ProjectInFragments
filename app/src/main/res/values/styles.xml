@@ -75,6 +75,11 @@
         <item name="errorTextGravity">VIEW_END</item>
         <item name="hintEnabled">false</item>
     </style>
+    <style name="TextInputLayoutStyleLeftBorderRadius" parent="TextInputLayoutStyle">
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="android:layout_marginHorizontal">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+    </style>
 
     <style name="PasswordLayoutStyle" parent="TextInputLayoutStyle">
         <item name="endIconMode">password_toggle</item>
