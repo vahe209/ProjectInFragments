@@ -70,35 +70,12 @@ class RegisterFragment(
         binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
             validPassword  = text?.toString().checkPattern(PASSWORD_PATTERN)
             binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
-/*     if (isValidPass(text.toString())) {
-                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
-                    R.color.accent_7
-                )))
-                binding.passwordInputLayout.error = "Excellent"
-                validPassword = true
-            } else {
-                binding.passwordInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
-                    R.color.accent_2
-                )))
-                binding.passwordInputLayout.error = null
-                validPassword = false
-            }*/
         }
         binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
             if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString().isNotEmpty()) {
-                binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
-                    R.color.accent_7
-                )))
-                binding.confirmInputLayout.apply {
-                    binding.confirmInputLayout.error = "Values match"
-                }
+                binding.confirmInputLayout.checkSuccessCondition("Values match", text.toString() == binding.passwordEdit.text.toString())
             } else {
-                binding.confirmInputLayout.apply {
-                    binding.confirmInputLayout.setErrorTextColor(ColorStateList.valueOf(resources.getColor(
-                        R.color.accent_2
-                    )))
-                    error = "Values do not match"
-                }
+                binding.confirmInputLayout.error = "Values do not match"
             }
         }
         binding.agreementCheckbox.setOnCheckedChangeListener { _, isChecked ->
