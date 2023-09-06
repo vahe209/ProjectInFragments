@@ -49,5 +49,6 @@
     <string name="mystery_key">Mystery</string>
     <string name="posted_data_key">2021 2h 20m</string>
     <string name="some_discount_key">some %</string>
+    <string name="selected_key">Selected</string>
 
 </resources>

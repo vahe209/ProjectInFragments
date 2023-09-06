@@ -14,16 +14,12 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.R
 
 class ForgotPasswordFragment(
-    private val createFragment: Interfaces.CreateFragment,
-    private val context: Context)
-    : Fragment(),
-    WrongDataFragment.FragmentInteractionListener {
+    private val createFragment: Interfaces.CreateFragment, private val context: Context
+) : Fragment(), WrongDataFragment.FragmentInteractionListener {
     private lateinit var binding: FragmentForgotPasswordBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
         binding.toolbar.toolbarTitleTv.text =
@@ -91,9 +87,9 @@ class ForgotPasswordFragment(
                 binding.forgotPassEdit.isFocusable = false
             }
         }
-        val callback = object: OnBackPressedCallback(true){
+        val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                createFragment.createFragment(LoginFragment(context,createFragment))
+                createFragment.createFragment(LoginFragment(context, createFragment))
             }
 
         }

@@ -19,18 +19,14 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
 
     init {
         context.theme.obtainStyledAttributes(
-            attrs,
-            R.styleable.CustomTextInputLayout,
-            0, R.style.TextInputLayoutStyle
+            attrs, R.styleable.CustomTextInputLayout, 0, R.style.TextInputLayoutStyle
         ).apply {
             try {
                 errorTextGravity = getInteger(
-                    R.styleable.CustomTextInputLayout_errorTextGravity,
-                    TEXT_ALIGNMENT_VIEW_END
+                    R.styleable.CustomTextInputLayout_errorTextGravity, TEXT_ALIGNMENT_VIEW_END
                 )
                 emptyStateMessage = getResourceId(
-                    R.styleable.CustomTextInputLayout_emptyStateErrorText,
-                    0
+                    R.styleable.CustomTextInputLayout_emptyStateErrorText, 0
                 )
                 errorTextView =
                     this@CustomTextInputLayout.findViewById<TextView>(com.google.android.material.R.id.textinput_error)
@@ -57,8 +53,7 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
 
 
     fun checkErrorCondition(
-        condition: Boolean = this.editText?.text.isNullOrEmpty(),
-        errorText: CharSequence? = null
+        condition: Boolean = this.editText?.text.isNullOrEmpty(), errorText: CharSequence? = null
     ) {
         if (visibility != View.VISIBLE) {
             this.isError = false
@@ -80,8 +75,7 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
     }
 
     fun checkSuccessCondition(
-        text: CharSequence,
-        condition: Boolean
+        text: CharSequence, condition: Boolean
     ) {
         if (condition && !isSuccess) {
             setErrorTextColor(ColorStateList.valueOf(this.resources.getColor(R.color.green)))

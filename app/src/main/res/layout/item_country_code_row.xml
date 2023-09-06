@@ -5,14 +5,9 @@
     android:id="@+id/row_constraint"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    android:layout_marginBottom="1dp"
     android:background="@color/accent_3">
 
-    <RelativeLayout
-        android:id="@+id/row_constraint_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/accent_5"
-        android:visibility="invisible" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/flag"
@@ -55,14 +50,10 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="SELECTED"
+        android:text="@string/selected_key"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="10sp"
         android:visibility="invisible" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/row_constraint_bg"
-        android:background="@color/accent_4" />
 </RelativeLayout>

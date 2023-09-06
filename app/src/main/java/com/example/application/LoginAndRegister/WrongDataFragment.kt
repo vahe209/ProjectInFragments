@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.application.databinding.FragmentWrongDataBinding
 
 @Suppress("DEPRECATION")
-class WrongDataFragment(private val textFromFragment:String) : Fragment() {
+class WrongDataFragment(private val textFromFragment: String) : Fragment() {
     private lateinit var binding: FragmentWrongDataBinding
     private var fragmentInteractionListener: FragmentInteractionListener? = null
     private val autoCloseDelayMillis = 3000
@@ -18,9 +18,11 @@ class WrongDataFragment(private val textFromFragment:String) : Fragment() {
         fragmentInteractionListener?.onCloseButtonPressed()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentWrongDataBinding.inflate(layoutInflater, container, false)
-        binding.textInErrorBody.text =this.textFromFragment
+        binding.textInErrorBody.text = this.textFromFragment
         return binding.root
     }
 

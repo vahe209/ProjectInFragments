@@ -12,11 +12,13 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class TermsAndConditionsFragment :  BottomSheetDialogFragment() {
-    private lateinit var binding:FragmentTermsAndConditionsBinding
+class TermsAndConditionsFragment : BottomSheetDialogFragment() {
+    private lateinit var binding: FragmentTermsAndConditionsBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-       binding = FragmentTermsAndConditionsBinding.inflate(inflater,container,false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentTermsAndConditionsBinding.inflate(inflater, container, false)
         setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
         dialog?.setOnShowListener { dialog ->
             val layout: FrameLayout? =

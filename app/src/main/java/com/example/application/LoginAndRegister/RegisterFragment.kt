@@ -25,12 +25,8 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class RegisterFragment(
-    private val context: Context,
-    private val createFragment: Interfaces.CreateFragment
-) :
-    Fragment(),
-    WrongDataFragment.FragmentInteractionListener,
-    CodesAdapter.CloseFragment {
+    private val context: Context, private val createFragment: Interfaces.CreateFragment
+) : Fragment(), WrongDataFragment.FragmentInteractionListener, CodesAdapter.CloseFragment {
     private lateinit var binding: FragmentRegisterBinding
     private var validPassword: Boolean = false
     private var isChecked: Boolean = false
@@ -66,12 +62,16 @@ class RegisterFragment(
             createFragment.createFragment(LoginFragment(context, createFragment))
         }
         binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
-            validPassword  = text?.toString().checkPattern(PASSWORD_PATTERN)
+            validPassword = text?.toString().checkPattern(PASSWORD_PATTERN)
             binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
         }
         binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
-            if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString().isNotEmpty()) {
-                binding.confirmInputLayout.checkSuccessCondition("Values match", text.toString() == binding.passwordEdit.text.toString())
+            if (text.toString() == binding.passwordEdit.text.toString() && binding.passwordEdit.text.toString()
+                    .isNotEmpty()
+            ) {
+                binding.confirmInputLayout.checkSuccessCondition(
+                    "Values match", text.toString() == binding.passwordEdit.text.toString()
+                )
             } else {
                 binding.confirmInputLayout.error = "Values do not match"
             }
@@ -87,26 +87,10 @@ class RegisterFragment(
             val isPasswordValid = checkPass(binding.passwordEdit.text.toString())
             val isConfirmPassValid = checkConfirmPass(binding.confirmEdit.text.toString())
             val isCheckBoxChecked = checkBoxIsChecked()
-            if (!isFistNameValid ||
-                !isLastNameValid ||
-                !isEmailValid ||
-                !isPhoneValid ||
-                !isPasswordValid ||
-                !isConfirmPassValid ||
-                !isCheckBoxChecked ||
-                binding.passwordEdit.text.toString() != binding.confirmEdit.text.toString()
-            ) {
+            if (!isFistNameValid || !isLastNameValid || !isEmailValid || !isPhoneValid || !isPasswordValid || !isConfirmPassValid || !isCheckBoxChecked || binding.passwordEdit.text.toString() != binding.confirmEdit.text.toString()) {
                 openErrorFragment()
             }
-            if (isFistNameValid &&
-                isLastNameValid &&
-                isEmailValid &&
-                isPhoneValid &&
-                isPasswordValid &&
-                isConfirmPassValid &&
-                isCheckBoxChecked &&
-                binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()
-            ) {
+            if (isFistNameValid && isLastNameValid && isEmailValid && isPhoneValid && isPasswordValid && isConfirmPassValid && isCheckBoxChecked && binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()) {
                 // TODO:  registerCall
                 Toast.makeText(context, "Everything is working", Toast.LENGTH_SHORT).show()
             }
@@ -115,7 +99,6 @@ class RegisterFragment(
             override fun handleOnBackPressed() {
                 createFragment.createFragment(LoginFragment(context, createFragment))
             }
-
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
         binding.agreementText2.setOnClickListener {
@@ -167,7 +150,7 @@ class RegisterFragment(
             binding.phoneInputLayout.error = null
             true
         } else {
-         binding.phoneInputLayout.error = "Phone is required"
+            binding.phoneInputLayout.error = "Phone is required"
             false
         }
     }
@@ -196,9 +179,8 @@ class RegisterFragment(
 
     @Suppress("UNREACHABLE_CODE")
     private fun isValidPass(password: String): Boolean {
-        val regex = "^(?=.*\\d)" + "(?=.*[a-z])(?=.*[A-Z])" +
-                "(?=.*[!@#$%^&*()_+~`<>?:{}])" +
-                "(?=\\S+$).{8,20}$"
+        val regex =
+            "^(?=.*\\d)" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[!@#$%^&*()_+~`<>?:{}])" + "(?=\\S+$).{8,20}$"
         val p: Pattern = Pattern.compile(regex)
         val m: Matcher = p.matcher(password)
         return m.matches()

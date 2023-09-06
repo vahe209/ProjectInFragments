@@ -11,13 +11,16 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.R
 
 class LoginFragment(
-    private val context: Context,
-    private val createFragment: Interfaces.CreateFragment) : Fragment() {
+    private val context: Context, private val createFragment: Interfaces.CreateFragment
+) : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        binding.toolbar.toolbarTitleTv.text = resources.getText(R.string.toolbar_title_in_login_page_key)
+        binding.toolbar.toolbarTitleTv.text =
+            resources.getText(R.string.toolbar_title_in_login_page_key)
         return binding.root
     }
 
@@ -34,7 +37,7 @@ class LoginFragment(
             }
         }
         binding.forgotPassText.setOnClickListener {
-            createFragment.createFragment(ForgotPasswordFragment(createFragment,context))
+            createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
         }
     }
 

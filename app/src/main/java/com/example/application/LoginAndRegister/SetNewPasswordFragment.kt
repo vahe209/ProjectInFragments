@@ -15,14 +15,11 @@ import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
 
 class SetNewPasswordFragment(
-    private val context: Context,
-    private val createFragment: Interfaces.CreateFragment
+    private val context: Context, private val createFragment: Interfaces.CreateFragment
 ) : Fragment() {
     private lateinit var binding: FragmentSetNewPasswordBinding
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentSetNewPasswordBinding.inflate(inflater, container, false)
         binding.toolbar.toolbarTitleTv.setText(R.string.toolbar_title_in_register_key)
@@ -33,15 +30,14 @@ class SetNewPasswordFragment(
         super.onViewCreated(view, savedInstanceState)
         var validPassword = false
         binding.passwordEdit.doOnTextChanged { text, _, _, _ ->
-            if (text?.isNotEmpty() == true)
-                validPassword = text.toString().checkPattern(PASSWORD_PATTERN)
+            if (text?.isNotEmpty() == true) validPassword =
+                text.toString().checkPattern(PASSWORD_PATTERN)
             binding.passwordInputLayout.checkSuccessCondition("Excellent", validPassword)
         }
         binding.confirmEdit.doOnTextChanged { text, _, _, _ ->
             if (binding.passwordEdit.text.toString().isNotEmpty() && validPassword) {
                 binding.confirmInputLayout.checkSuccessCondition(
-                    "Values match",
-                    text.toString() == binding.passwordEdit.text.toString()
+                    "Values match", text.toString() == binding.passwordEdit.text.toString()
                 )
             } else {
                 binding.confirmInputLayout.error = "Values do not match"
@@ -55,8 +51,7 @@ class SetNewPasswordFragment(
                 if (binding.passwordEdit.text.toString() == binding.confirmEdit.text.toString()) {
                     createFragment.createFragment(
                         SuccssedPasswordChangeFragment(
-                            context,
-                            createFragment
+                            context, createFragment
                         )
                     )
                 } else {

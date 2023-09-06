@@ -25,12 +25,14 @@ import java.util.*
 class EnterNumberCodeFragment(
     private var selectedItem: CountryCodeItem?,
     private val closeFragmentEnterNumberCode: RegisterFragment
-): BottomSheetDialogFragment() {
+) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentEnterNumberCodeBinding
     private lateinit var items: ArrayList<CountryCodeItem>
     private lateinit var adapter: CodesAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentEnterNumberCodeBinding.inflate(layoutInflater, container, false)
         setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
         dialog?.setOnShowListener { dialog ->
@@ -58,8 +60,10 @@ class EnterNumberCodeFragment(
         override fun afterTextChanged(editable: Editable?) {
             filterCodes(editable.toString())
         }
+
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
         }
+
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         }
     }
@@ -87,7 +91,10 @@ class EnterNumberCodeFragment(
         val filteredCodes = ArrayList<CountryCodeItem>()
         for (item in items) {
             if (item.name.lowercase(Locale.getDefault())
-                    .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(string)) {
+                    .contains(string.lowercase(Locale.getDefault())) || item.dialCode.contains(
+                    string
+                )
+            ) {
                 filteredCodes.add(item)
                 binding.nothingFoundText.isVisible = false
             }

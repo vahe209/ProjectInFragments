@@ -3,6 +3,7 @@ package com.example.application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.application.ExploreAndSearch.ExploreSearchFragment
 import com.example.application.LoginAndRegister.LoginFragment
 import com.example.application.databinding.ActivityMainBinding
 import com.example.application.LoginAndRegister.interfaces.Interfaces
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity(), Interfaces.CreateFragment{
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
          createFragment.createFragment(LoginFragment(this,createFragment))
-       // createFragment.createFragment(ExploreSearchFragment())
+        //  createFragment.createFragment(ExploreSearchFragment())
     }
 
     override fun createFragment(fragment: Fragment) {
