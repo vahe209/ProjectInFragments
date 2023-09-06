@@ -156,26 +156,27 @@
             <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
             <View
                 android:id="@+id/choose_country_code"
-                android:background="@drawable/background_choose_country_view"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/background_choose_country_view"
                 android:paddingEnd="24dp"
                 app:layout_constraintStart_toStartOf="@id/phone_edit_title"
                 app:layout_constraintTop_toBottomOf="@id/phone_edit_title"
                 tools:ignore="RtlSymmetry" />
 
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:id="@+id/flag"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="🇺🇸"
-                                android:textSize="28sp"
-                                android:layout_marginStart="20dp"
-                                app:layout_constraintBottom_toBottomOf="@id/choose_country_code"
-                                app:layout_constraintTop_toTopOf="@id/choose_country_code"
-                                app:layout_constraintStart_toStartOf="@id/choose_country_code" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/flag"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:text="🇺🇸"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="@id/choose_country_code"
+                app:layout_constraintStart_toStartOf="@id/choose_country_code"
+                app:layout_constraintTop_toTopOf="@id/choose_country_code" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/dropdown_arrow"
@@ -195,14 +196,14 @@
                 style="@style/TextInputLayoutStyleLeftBorderRadius"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:prefixText="+1"
-                app:prefixTextColor="@color/accent_4"
-                app:expandedHintEnabled="false"
                 android:layout_marginTop="19dp"
+                app:expandedHintEnabled="false"
                 app:layout_constraintBottom_toBottomOf="@id/choose_country_code"
                 app:layout_constraintEnd_toEndOf="@id/email_input_layout"
                 app:layout_constraintStart_toEndOf="@id/choose_country_code"
-                app:layout_constraintTop_toTopOf="@id/choose_country_code">
+                app:layout_constraintTop_toTopOf="@id/choose_country_code"
+                app:prefixText="+1"
+                app:prefixTextColor="@color/accent_4">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/phone_edit"

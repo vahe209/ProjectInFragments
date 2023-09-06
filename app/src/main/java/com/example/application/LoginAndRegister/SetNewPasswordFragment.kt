@@ -1,8 +1,6 @@
 package com.example.application.LoginAndRegister
 
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +13,6 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.R
 import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 class SetNewPasswordFragment(
     private val context: Context,

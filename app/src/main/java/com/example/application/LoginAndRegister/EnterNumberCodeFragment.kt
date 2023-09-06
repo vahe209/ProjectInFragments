@@ -10,10 +10,10 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.application.LoginAndRegister.adapter.CodesAdapter
-import com.example.application.databinding.FragmentEnterNumberCodeBinding
-import com.example.application.LoginAndRegister.data.CountryCodeItem
 import com.example.application.R
+import com.example.application.databinding.FragmentEnterNumberCodeBinding
+import com.example.application.LoginAndRegister.adapter.CodesAdapter
+import com.example.application.LoginAndRegister.data.CountryCodeItem
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

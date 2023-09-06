@@ -2,8 +2,6 @@ package com.example.application.LoginAndRegister
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,10 +15,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.application.LoginAndRegister.adapter.CodesAdapter
 import com.example.application.LoginAndRegister.data.CountryCodeItem
-import com.example.application.databinding.FragmentRegisterBinding
 import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.LoginAndRegister.viewModels.ViewModelRegisterActivity
 import com.example.application.R
+import com.example.application.databinding.FragmentRegisterBinding
 import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
 import java.util.regex.Matcher
@@ -140,7 +138,6 @@ class RegisterFragment(
     @SuppressLint("SetTextI18n")
     private fun checkConfirmPass(confPass: String): Boolean {
         return if (confPass.isNotEmpty()) {
-            binding.confirmInputLayout.error = null
             true
         } else {
             binding.confirmInputLayout.error = "Confirm password"
