@@ -54,7 +54,6 @@ class CodesAdapter(
         holder.flag.text = item.flag
         holder.countryName.text = item.name
         holder.numberCode.text = item.dialCode
-
         holder.itemView.setOnClickListener {
             for (code in codes) {
                 item.isSelected = false

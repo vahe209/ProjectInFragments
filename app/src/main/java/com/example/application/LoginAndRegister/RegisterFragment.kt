@@ -130,7 +130,7 @@ class RegisterFragment(
 
     @SuppressLint("SetTextI18n")
     private fun checkPass(password: String): Boolean {
-        validPassword = isValidPass(password)
+        validPassword = password.checkPattern(PASSWORD_PATTERN)
         return if (password.isNotEmpty()) {
             if (validPassword) {
                 true
@@ -175,15 +175,6 @@ class RegisterFragment(
             binding.fNameInputLayout.error = "First name is required"
             false
         }
-    }
-
-    @Suppress("UNREACHABLE_CODE")
-    private fun isValidPass(password: String): Boolean {
-        val regex =
-            "^(?=.*\\d)" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[!@#$%^&*()_+~`<>?:{}])" + "(?=\\S+$).{8,20}$"
-        val p: Pattern = Pattern.compile(regex)
-        val m: Matcher = p.matcher(password)
-        return m.matches()
     }
 
     @SuppressLint("SetTextI18n")
