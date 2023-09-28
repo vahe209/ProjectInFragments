@@ -125,10 +125,10 @@ class ForgotPasswordFragment(
     }
 
     private fun checkFields() {
-        val box1 = binding.box5Edt.text.toString().isNotEmpty()
-        val box2 = binding.box5Edt.text.toString().isNotEmpty()
-        val box3 = binding.box5Edt.text.toString().isNotEmpty()
-        val box4 = binding.box5Edt.text.toString().isNotEmpty()
+        val box1 = binding.box1Edt.text.toString().isNotEmpty()
+        val box2 = binding.box2Edt.text.toString().isNotEmpty()
+        val box3 = binding.box3Edt.text.toString().isNotEmpty()
+        val box4 = binding.box4Edt.text.toString().isNotEmpty()
         val box5 = binding.box5Edt.text.toString().isNotEmpty()
         val box6 = binding.box6Edt.text.toString().isNotEmpty()
         if (box1 && box2 && box3 && box4 && box5 && box6) {
