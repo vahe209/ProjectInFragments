@@ -11,7 +11,7 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.R
 
 class LoginFragment(
-    private val context: Context, private val createFragment: Interfaces.CreateFragment
+ private val createFragment: Interfaces.CreateFragment
 ) : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
@@ -27,7 +27,7 @@ class LoginFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.forRegisterTv.setOnClickListener {
-            createFragment.createFragment(RegisterFragment(context, createFragment))
+            createFragment.createFragment(RegisterFragment(createFragment))
         }
         binding.loginBtn.setOnClickListener {
             val isLoginValid = checkEmail()
@@ -37,7 +37,7 @@ class LoginFragment(
             }
         }
         binding.forgotPassTv.setOnClickListener {
-            createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
+            createFragment.createFragment(ForgotPasswordFragment(createFragment))
         }
     }
 

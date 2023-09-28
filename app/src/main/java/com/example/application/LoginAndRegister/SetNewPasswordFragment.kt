@@ -15,7 +15,6 @@ import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
 
 class SetNewPasswordFragment(
-    private val context: Context,
     private val createFragment: Interfaces.CreateFragment) : Fragment() {
     private lateinit var binding: FragmentSetNewPasswordBinding
     override fun onCreateView(
@@ -44,15 +43,13 @@ class SetNewPasswordFragment(
             }
         }
         binding.toolbar.iconBackImg.setOnClickListener {
-            createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
+            createFragment.createFragment(ForgotPasswordFragment(createFragment))
         }
         binding.completeChangesBtn.setOnClickListener {
             if (validPassword) {
                 if (binding.passwordEdt.text.toString() == binding.confirmEdt.text.toString()) {
                     createFragment.createFragment(
-                        SuccssedPasswordChangeFragment(
-                            context, createFragment
-                        )
+                        SuccssedPasswordChangeFragment(createFragment)
                     )
                 } else {
                     binding.confirmInputLayout.error = "Values do not match"
@@ -63,7 +60,7 @@ class SetNewPasswordFragment(
         }
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                createFragment.createFragment(ForgotPasswordFragment(createFragment, context))
+                createFragment.createFragment(ForgotPasswordFragment(createFragment))
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)

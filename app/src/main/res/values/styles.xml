@@ -119,7 +119,6 @@
         <item name="android:inputType">number</item>
         <item name="android:digits">0123456789</item>
         <item name="android:background">@drawable/forgot_pass_code_bg</item>
-
     </style>
 
     <style name="MainButtonStyle" parent="Widget.AppCompat.Button">

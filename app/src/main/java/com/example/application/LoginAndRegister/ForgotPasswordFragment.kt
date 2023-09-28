@@ -14,7 +14,7 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.R
 
 class ForgotPasswordFragment(
-    private val createFragment: Interfaces.CreateFragment, private val context: Context
+    private val createFragment: Interfaces.CreateFragment
 ) : Fragment(), WrongDataFragment.FragmentInteractionListener {
     private lateinit var binding: FragmentForgotPasswordBinding
 
@@ -30,7 +30,7 @@ class ForgotPasswordFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.iconBackImg.setOnClickListener {
-            createFragment.createFragment(LoginFragment(context, createFragment))
+            createFragment.createFragment(LoginFragment(createFragment))
         }
         binding.box1Edt.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
@@ -89,7 +89,7 @@ class ForgotPasswordFragment(
         }
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                createFragment.createFragment(LoginFragment(context, createFragment))
+                createFragment.createFragment(LoginFragment(createFragment))
             }
 
         }
@@ -132,7 +132,7 @@ class ForgotPasswordFragment(
         val box5 = binding.box5Edt.text.toString().isNotEmpty()
         val box6 = binding.box6Edt.text.toString().isNotEmpty()
         if (box1 && box2 && box3 && box4 && box5 && box6) {
-            createFragment.createFragment(SetNewPasswordFragment(context, createFragment))
+            createFragment.createFragment(SetNewPasswordFragment(createFragment))
         }
     }
 }

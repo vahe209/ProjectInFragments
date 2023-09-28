@@ -5,17 +5,16 @@ import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import com.example.application.R
 import com.google.android.material.textfield.TextInputLayout
 
 class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
     TextInputLayout(context, attrs) {
-    var errorTextGravity = TEXT_ALIGNMENT_VIEW_END
-    var emptyStateMessage: Int = 0
-    var isError: Boolean = false
-    var isSuccess: Boolean = false
-    var errorTextView: TextView?
+    private var errorTextGravity = TEXT_ALIGNMENT_VIEW_END
+    private var emptyStateMessage: Int = 0
+    private var isError: Boolean = false
+    private var isSuccess: Boolean = false
+    private var errorTextView: TextView?
 
     init {
         context.theme.obtainStyledAttributes(
@@ -29,7 +28,7 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
                     R.styleable.CustomTextInputLayout_emptyStateErrorText, 0
                 )
                 errorTextView =
-                    this@CustomTextInputLayout.findViewById<TextView>(com.google.android.material.R.id.textinput_error)
+                    this@CustomTextInputLayout.findViewById(com.google.android.material.R.id.textinput_error)
                 if (errorTextView != null) {
                     errorTextView?.textAlignment = errorTextGravity
                 }
@@ -39,18 +38,15 @@ class CustomTextInputLayout(context: Context, attrs: AttributeSet) :
         }
     }
 
-
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
 
     }
 
-
     /*    override fun setEndIconVisible(visible: Boolean) {
             val isVisible = if (endIconMode == END_ICON_CUSTOM) true else visible
             super.setEndIconVisible(isVisible)
         }*/
-
 
     fun checkErrorCondition(
         condition: Boolean = this.editText?.text.isNullOrEmpty(), errorText: CharSequence? = null

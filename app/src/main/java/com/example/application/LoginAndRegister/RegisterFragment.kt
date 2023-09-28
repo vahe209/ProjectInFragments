@@ -20,13 +20,13 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 import com.example.application.LoginAndRegister.viewModels.ViewModelRegisterActivity
 import com.example.application.R
 import com.example.application.databinding.FragmentRegisterBinding
+import com.example.application.util.EMAIL_PATTERN
 import com.example.application.util.PASSWORD_PATTERN
 import com.example.application.util.checkPattern
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-class RegisterFragment(
-    private val context: Context, private val createFragment: Interfaces.CreateFragment
+class RegisterFragment(private val createFragment: Interfaces.CreateFragment
 ) : Fragment(), WrongDataFragment.FragmentInteractionListener, CodesAdapter.CloseFragment {
     private lateinit var binding: FragmentRegisterBinding
     private var validPassword: Boolean = false
@@ -52,7 +52,7 @@ class RegisterFragment(
             binding.phoneInputLayout.prefixText = arguments?.getString("numberCode")
         }
         binding.toolbar.iconBackImg.setOnClickListener {
-            createFragment.createFragment(LoginFragment(context, createFragment))
+            createFragment.createFragment(LoginFragment(createFragment))
         }
         binding.chooseCountryCode.setOnClickListener {
             selectedNumberCode = viewModel.getSelectedNumberCode()
@@ -60,7 +60,7 @@ class RegisterFragment(
             openFragment(fragmentEnterNumberCode)
         }
         binding.forLoginTv.setOnClickListener {
-            createFragment.createFragment(LoginFragment(context, createFragment))
+            createFragment.createFragment(LoginFragment(createFragment))
         }
         binding.passwordEdt.doOnTextChanged { text, _, _, _ ->
             validPassword = text?.toString().checkPattern(PASSWORD_PATTERN)
@@ -112,7 +112,7 @@ class RegisterFragment(
         }
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                createFragment.createFragment(LoginFragment(context, createFragment))
+                createFragment.createFragment(LoginFragment(createFragment))
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
@@ -123,12 +123,12 @@ class RegisterFragment(
 
     private fun checkBoxIsChecked(): Boolean {
         return if (isChecked) {
-            binding.agreementTv1.setTextColor(ContextCompat.getColor(context, R.color.white))
-            binding.agreementTv2.setTextColor(ContextCompat.getColor(context, R.color.accent_5))
+            binding.agreementTv1.setTextColor(resources.getColor(R.color.white))
+            binding.agreementTv2.setTextColor(resources.getColor(R.color.accent_5))
             true
         } else {
-            binding.agreementTv1.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
-            binding.agreementTv2.setTextColor(ContextCompat.getColor(context, R.color.accent_2))
+            binding.agreementTv1.setTextColor(resources.getColor(R.color.accent_2))
+            binding.agreementTv2.setTextColor(resources.getColor(R.color.accent_2))
             false
         }
     }
@@ -195,10 +195,8 @@ class RegisterFragment(
     @SuppressLint("SetTextI18n")
     private fun checkEmail(email: String): Boolean {
         return if (email.isNotEmpty()) {
-            val regex = "^[A-Za-z\\d+_.-]+@(.+)$"
-            val pattern = Pattern.compile(regex)
-            val matcher = pattern.matcher(email)
-            if (matcher.matches()) {
+            val validEmail = email.checkPattern(EMAIL_PATTERN)
+            if (validEmail) {
                 binding.emailInputLayout.error = null
                 true
             } else {

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), Interfaces.CreateFragment{
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-         createFragment.createFragment(LoginFragment(this,createFragment))
+         createFragment.createFragment(LoginFragment(createFragment))
         //  createFragment.createFragment(ExploreSearchFragment())
     }
 

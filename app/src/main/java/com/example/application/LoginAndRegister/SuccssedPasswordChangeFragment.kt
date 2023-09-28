@@ -12,7 +12,7 @@ import com.example.application.LoginAndRegister.interfaces.Interfaces
 
 
 class SuccssedPasswordChangeFragment(
-    private val context: Context, private val createFragment: Interfaces.CreateFragment
+ private val createFragment: Interfaces.CreateFragment
 ) : Fragment() {
     private lateinit var binding: FragmentSuccssedPasswordChangeBinding
     override fun onCreateView(
@@ -25,11 +25,11 @@ class SuccssedPasswordChangeFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginBtn.setOnClickListener {
-            createFragment.createFragment(LoginFragment(context, createFragment))
+            createFragment.createFragment(LoginFragment(createFragment))
         }
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                createFragment.createFragment(LoginFragment(context, createFragment))
+                createFragment.createFragment(LoginFragment(createFragment))
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
