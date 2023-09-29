@@ -51,5 +51,12 @@
     <string name="some_discount_key">some %</string>
     <string name="selected_key">Selected</string>
     <string name="nothing_found_key">Nothing found</string>
+    <string name="event_name_key">Event name</string>
+    <string name="event_description_key">Event description</string>
+    <string name="start_date_and_time_key">Start date and time</string>
+    <string name="end_date_and_time_key">+ End date and time</string>
+    <string name="add_members_key">Add members</string>
+    <string name="choose_friends_key">Choose friends or invite by email</string>
+    <string name="next_key">Next</string>
 
 </resources>
