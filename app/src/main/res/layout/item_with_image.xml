@@ -9,7 +9,7 @@
         android:id="@+id/image_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/item_image" />
 
@@ -17,7 +17,9 @@
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignTop="@id/image_img"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/image_img"
         android:src="@drawable/icon_play" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -25,6 +27,7 @@
         style="@style/TextWhite18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_below="@id/image_img"
         android:layout_alignStart="@id/image_img"
         android:text="@string/name_of_movie_key"
