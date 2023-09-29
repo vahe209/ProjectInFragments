@@ -3,7 +3,6 @@ package com.example.application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.application.ExploreAndSearch.ExploreSearchFragment
 import com.example.application.LoginAndRegister.LoginFragment
 import com.example.application.databinding.ActivityMainBinding
 import com.example.application.LoginAndRegister.interfaces.Interfaces
