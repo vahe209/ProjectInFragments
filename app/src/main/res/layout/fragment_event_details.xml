@@ -14,7 +14,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true"
         android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="40dp"
-            android:layout_marginHorizontal="24dp">
+            android:layout_marginHorizontal="24dp"
+            android:paddingBottom="40dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/user_image_img"
@@ -58,15 +58,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/event_name_edit_layout"
-                style="@style/TextInputLayoutStyle"
+                style="@style/ExpandableTextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="0dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_bg_with_grey_border"
                 android:hint="@string/event_name_key"
-                android:paddingTop="4dp"
                 android:textColorHint="@color/accent_4"
+                app:errorEnabled="false"
                 app:hintEnabled="true"
                 app:hintTextColor="@color/accent_4"
                 app:layout_constraintTop_toBottomOf="@+id/user_image_img">
@@ -93,7 +93,6 @@
                 android:hint="@string/event_description_key"
                 android:textColorHint="@color/accent_4"
                 app:hintEnabled="true"
-                app:hintTextAppearance="@style/CustomHintTextAppearance"
                 app:hintTextColor="@color/accent_4"
                 app:layout_constraintTop_toBottomOf="@id/event_name_edit_layout">
 
@@ -101,17 +100,17 @@
                     android:id="@+id/event_description_edt"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:inputType="textMultiLine"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginBottom="2dp"
                     android:background="@drawable/edit_text_bg"
-                    android:gravity="start" />
+                    android:gravity="start"
+                    android:inputType="textMultiLine" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/event_start_date_edit_layout"
-                style="@style/TextInputLayoutStyle"
+                style="@style/ExpandableTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginHorizontal="0dp"
@@ -132,21 +131,21 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_marginBottom="2dp"
                     android:background="@drawable/edit_text_bg"
-                    android:text="@string/some_title_key" />
+                    android:text="@string/some_date_key" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/event_end_date_edit_layout"
-                style="@style/TextInputLayoutStyle"
+                style="@style/ExpandableTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginHorizontal="0dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_bg_with_grey_border"
-                android:hint="@string/start_date_and_time_key"
+                android:hint="@string/end_date_and_time_key"
                 android:paddingTop="4dp"
                 android:textColorHint="@color/accent_4"
-                android:visibility="invisible"
+                android:visibility="visible"
                 app:hintEnabled="true"
                 app:hintTextColor="@color/accent_4"
                 app:layout_constraintTop_toBottomOf="@+id/event_start_date_edit_layout">
@@ -167,112 +166,31 @@
                 android:id="@+id/add_end_date_tv"
                 style="@style/TextBlue14"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/end_date_and_time_key"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/event_start_date_edit_layout" />
+                app:layout_constraintTop_toBottomOf="@id/event_end_date_edit_layout" />
 
-            <View
-                android:id="@+id/grey_line_view"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/options_rv"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/accent_4_opp_04"
-                app:layout_constraintTop_toBottomOf="@id/event_end_date_edit_layout"></View>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/add_members_img"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/circle"
-                android:src="@drawable/icon_play"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/grey_line_view" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/add_members_tv"
-                style="@style/TextWhite14"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/add_members_key"
-                app:layout_constraintStart_toEndOf="@id/add_members_img"
-                app:layout_constraintTop_toTopOf="@id/add_members_img" />
+                app:layout_constraintTop_toBottomOf="@id/add_end_date_tv"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_for_event_details_option" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextLightGrey12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choose_friends_key"
-                app:layout_constraintBottom_toBottomOf="@id/add_members_img"
-                app:layout_constraintStart_toStartOf="@id/add_members_tv"
-                app:layout_constraintTop_toBottomOf="@id/add_members_tv" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/icon_bottom_arrow"
-                app:layout_constraintBottom_toBottomOf="@id/add_members_img"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/add_members_img" />
-
-            <View
-                android:id="@+id/grey_line_view2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/accent_4_opp_04"
-                app:layout_constraintTop_toBottomOf="@id/add_members_img"
-                android:layout_marginTop="24dp"></View>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/privacy_img"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/circle"
-                android:src="@drawable/icon_play"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/grey_line_view2" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/privacy_tv"
-                style="@style/TextWhite14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/add_members_key"
-                app:layout_constraintStart_toEndOf="@id/privacy_img"
-                app:layout_constraintTop_toTopOf="@id/privacy_img" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextLightGrey12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choose_friends_key"
-                app:layout_constraintBottom_toBottomOf="@id/privacy_img"
-                app:layout_constraintStart_toStartOf="@id/privacy_tv"
-                app:layout_constraintTop_toBottomOf="@id/privacy_tv" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/icon_bottom_arrow"
-                app:layout_constraintBottom_toBottomOf="@id/privacy_img"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/privacy_img" />
-            
             <androidx.appcompat.widget.AppCompatButton
+                style="@style/MainRedButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                style="@style/MainRedButtonStyle"
-                app:layout_constraintTop_toBottomOf="@id/privacy_img"
-                android:backgroundTint="@color/accent_3"
                 android:layout_marginHorizontal="28dp"
                 android:layout_marginTop="40dp"
-                android:text="@string/next_key"/>
+                android:backgroundTint="@color/accent_3"
+                android:text="@string/next_key"
+                app:layout_constraintTop_toBottomOf="@id/options_rv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
 </androidx.appcompat.widget.LinearLayoutCompat>

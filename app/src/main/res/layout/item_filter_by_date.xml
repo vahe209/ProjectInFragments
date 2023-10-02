@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:background="@drawable/forgot_pass_code_bg"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="10dp">
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radio_button_rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:buttonTint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/day_tv"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignTop="@+id/radio_button_rb"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/radio_button_rb"
+        android:text="@string/some_date_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date_tv"
+        style="@style/TextLightGrey12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/day_tv"
+        android:layout_alignStart="@id/day_tv"
+        android:layout_alignBottom="@id/radio_button_rb"
+        android:text="@string/some_date_key" />
+</RelativeLayout>

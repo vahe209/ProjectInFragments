@@ -10,11 +10,11 @@
         android:id="@+id/view_type_vw"
         android:layout_width="0dp"
         android:layout_height="2dp"
+        android:layout_toEndOf="@id/type_header_tv"
+        android:layout_toStartOf="@id/type_header_tv"
         android:background="@color/accent_2"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/type_header_tv"
-        app:layout_constraintEnd_toEndOf="@id/type_header_tv"
-        app:layout_constraintStart_toStartOf="@id/type_header_tv" />
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/type_header_tv"

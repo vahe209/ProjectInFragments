@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_1"
+    android:orientation="vertical"
+    tools:context=".CreateEvent.EventDetailsFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/navigation_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_choose_filter_type" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sorted_by_tv"
+                style="@style/TextLightGrey14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/sort_by_key"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_rv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sort_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/sorted_by_tv"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_filter_by_date" />
+
+            <GridLayout
+                android:id="@+id/set_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                app:layout_constraintTop_toBottomOf="@id/sort_rv">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextLightGrey14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="@string/from_date_key" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextLightGrey14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="@string/to_date_key" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_with_grey_border_radius4"
+                    android:drawableStart="@drawable/icon_calendar"
+                    android:drawableTint="@color/white" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_with_grey_border_radius4"
+                    android:drawableStart="@drawable/icon_calendar"
+                    android:drawableTint="@color/white" />
+            </GridLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/filter_btn"
+                style="@style/MainRedButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="50dp"
+                android:text="View Results (123)"
+                app:layout_constraintTop_toBottomOf="@id/set_date_layout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/privacy_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:layout_marginTop="24dp"
+    android:background="@drawable/forgot_pass_code_bg"
+    android:layout_marginBottom="1dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/privacy_tv"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_height="wrap_content"
+        android:text="@string/private_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/privacy_under_title_tv"
+        style="@style/TextLightGrey12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/privacy_tv"
+        android:layout_alignStart="@id/privacy_tv"
+        android:text="@string/people_are_invited_key" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:checked="true"
+        android:thumb="@drawable/switch_compat_thumb"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        app:track="@drawable/switch_compat_track" />
+</RelativeLayout>

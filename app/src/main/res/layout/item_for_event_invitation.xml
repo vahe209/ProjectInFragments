@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginVertical="24dp"
+    android:background="@drawable/forgot_pass_code_bg"
+    android:paddingBottom="16dp">
+    <LinearLayout
+        android:id="@+id/upload_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/forgot_pass_code_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_upload_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextLightGrey12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/upload_cover_key"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/upload_image_layout"
+        android:id="@+id/image_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icon_red_ball" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name_tv"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image_img"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/image_img"
+        android:text="@string/first_name_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/status_tv"
+        style="@style/TextLightGrey12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_tv"
+        android:layout_alignStart="@id/name_tv"
+        android:text="@string/some_title_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_date_tv"
+        style="@style/TextBlue12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/status_tv"
+        android:layout_alignStart="@id/image_img"
+        android:layout_marginTop="10dp"
+        android:text="@string/some_date_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_name_tv"
+        style="@style/TextWhite18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_date_tv"
+        android:layout_alignStart="@id/event_date_tv"
+        android:layout_marginTop="4dp"
+        android:text="@string/event_name_key"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_tv"
+        style="@style/TextLightGrey12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_name_tv"
+        android:layout_alignStart="@id/event_name_tv"
+        android:layout_marginTop="10dp"
+        android:text="@string/some_title_key" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/move_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/details_tv"
+        android:layout_alignStart="@+id/details_tv"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/forgot_pass_code_bg"
+        android:src="@drawable/icon_upload_image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/move_name_tv"
+        style="@style/TextWhite16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/move_img"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@id/move_img"
+        android:text="@string/some_title_key"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/move_name_tv"
+        android:layout_alignStart="@id/move_name_tv"
+        android:layout_marginTop="2dp"
+        android:text="@string/some_title_key" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/move_name_tv"
+        android:layout_alignBottom="@id/move_img"
+        android:text="2h 20m" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/move_img"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/forgot_pass_code_bg"
+            android:backgroundTint="@color/accent_2"
+            android:text="@string/accept_key"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:background="@drawable/bg_with_grey_border_radius4"
+            android:textAllCaps="false"
+            android:text="@string/decline_key"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -5,6 +5,10 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
+    <style name="TextWhite12" parent="TextWhite14">
+        <item name="android:textSize">12sp</item>
+
+    </style>
 
     <style name="TextLightGrey14" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
@@ -26,6 +30,9 @@
     <style name="TextBlue14" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/accent_5</item>
+    </style>
+    <style name="TextBlue12" parent="TextBlue14">
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="TextWhite16" parent="Widget.AppCompat.TextView">
@@ -80,6 +87,9 @@
         <item name="errorTextGravity">VIEW_END</item>
         <item name="hintEnabled">false</item>
     </style>
+    <style name="TextInputLayoutWithPrefixStyle" parent="TextInputLayoutStyle">
+        <item name="prefixTextColor">@color/white</item>
+    </style>
 
     <style name="TextInputLayoutStyleLeftBorderRadius" parent="TextInputLayoutStyle">
         <item name="boxCornerRadiusBottomStart">0dp</item>
@@ -96,6 +106,11 @@
     </style>
 
     <style name="TextInputWithIconStyle" parent="TextInputLayoutStyle"></style>
+
+    <style name="ExpandableTextInputLayout" parent="TextInputLayoutStyle">
+        <item name="hintEnabled">true</item>
+        <item name="expandedHintEnabled">true</item>
+    </style>
 
     <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">14sp</item>
@@ -136,6 +151,7 @@
     </style>
 
     <style name="MainRedButtonStyle" parent="MainButtonStyle">
+        <item name="android:textStyle">bold</item>
         <item name="android:background">@drawable/shape_main_red_button</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -163,10 +179,5 @@
     </style>
     //////////////////////////////////////////
 
-    <style name="CustomHintTextAppearance">
-        <item name="android:textColorHint">@color/accent_4</item> <!-- Customize the hint text color -->
-        <item name="android:textSize">16sp</item> <!-- Customize the hint text size -->
-        <item name="android:gravity">start|top</item> <!-- Align hint text to start (left) and top -->
-    </style>
 
 </resources>

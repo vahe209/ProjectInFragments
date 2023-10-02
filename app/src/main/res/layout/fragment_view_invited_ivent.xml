@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_1"
+    android:orientation="vertical"
+    tools:context=".CreateEvent.EventDetailsFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp">
+
+            <LinearLayout
+                android:id="@+id/upload_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/forgot_pass_code_bg"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_upload_image" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextLightGrey12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/upload_cover_key"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_img"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/upload_image_layout"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_red_ball" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name_tv"
+                style="@style/TextWhite14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/image_img"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/image_img"
+                android:text="@string/first_name_key" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/status_tv"
+                style="@style/TextLightGrey12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_tv"
+                android:layout_alignStart="@id/name_tv"
+                android:text="@string/some_title_key" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_date_tv"
+                style="@style/TextBlue12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status_tv"
+                android:layout_alignStart="@id/image_img"
+                android:layout_marginTop="10dp"
+                android:text="@string/some_date_key" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_name_tv"
+                style="@style/TextWhite18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_date_tv"
+                android:layout_alignStart="@id/event_date_tv"
+                android:layout_marginTop="4dp"
+                android:text="@string/event_name_key"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logo_img1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/event_name_tv"
+                android:layout_alignStart="@id/event_name_tv"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_red_ball" />
+
+            <ImageView
+                android:id="@+id/logo_img2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignStart="@id/logo_img1"
+                android:layout_alignTop="@id/logo_img1"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/icon_red_ball" />
+
+            <ImageView
+                android:id="@+id/logo_img3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignStart="@id/logo_img2"
+                android:layout_alignTop="@id/logo_img2"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/icon_red_ball" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/other_members_tv"
+                style="@style/TextWhite12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/logo_img3"
+                android:layout_alignBottom="@id/logo_img3"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/logo_img3"
+                android:gravity="bottom"
+                android:text="+21 other members" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/details_tv"
+                style="@style/TextLightGrey12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo_img1"
+                android:layout_alignStart="@id/event_name_tv"
+                android:layout_marginTop="10dp"
+                android:text="@string/some_title_key" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/move_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/details_tv"
+                android:layout_alignStart="@+id/details_tv"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/forgot_pass_code_bg"
+                android:src="@drawable/icon_upload_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/move_name_tv"
+                style="@style/TextWhite16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/move_img"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/move_img"
+                android:text="@string/some_title_key"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/move_type_tv"
+                style="@style/TextLightGrey14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/move_name_tv"
+                android:layout_alignStart="@id/move_name_tv"
+                android:layout_marginTop="2dp"
+                android:text="@string/some_title_key" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/duration_tv"
+                style="@style/TextLightGrey14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/move_name_tv"
+                android:layout_alignBottom="@id/move_img"
+                android:text="2h 20m" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/MainRedButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/move_img"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/leave_event_key"
+                android:textAllCaps="true" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
