@@ -26,6 +26,7 @@
         android:text="@string/people_are_invited_key" />
 
     <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radio_button_rb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/privacy_tv"
@@ -33,6 +34,7 @@
         android:layout_alignParentEnd="true"
         android:buttonTint="@color/white" />
     <View
+        android:id="@+id/grey_line_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"

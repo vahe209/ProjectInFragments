@@ -23,6 +23,7 @@
         android:tint="@color/white"/>
 
     <View
+        android:id="@+id/grey_line_view"
         android:background="@color/accent_4_opp_04"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"

@@ -47,15 +47,14 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/item_choose_filter_type" />
 
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/moves_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/navigation_rv"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_for_event_invitation"/>
-
+                tools:listitem="@layout/item_for_event_invitation" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

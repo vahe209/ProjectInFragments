@@ -39,6 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/apply_btn"
                 style="@style/MainRedButtonStyle"
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
@@ -61,6 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@id/code_edt">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/members_tv"
                     style="@style/TextLightGrey12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -69,6 +71,7 @@
                     android:text="@string/qr_flix_members_key" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/price_tv"
                     style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
 
 
                 <ImageView
+                    android:id="@+id/grey_line_view"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_columnSpan="2"
@@ -86,6 +90,7 @@
                     android:background="@drawable/dotted_line" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/members_by_email_tv"
                     style="@style/TextLightGrey12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -94,6 +99,7 @@
                     android:text="@string/invite_by_email_key" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/members_by_email_price_tv"
                     style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -105,6 +111,7 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
+                    android:id="@+id/all_price_layout"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_columnSpan="2"
@@ -115,6 +122,7 @@
                     android:paddingHorizontal="16dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/all_price_title_tv"
                         style="@style/TextWhite14"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -124,6 +132,7 @@
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/all_price_tv"
                         style="@style/TextWhite14"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -161,6 +170,7 @@
                     android:text="@string/some_title_key" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date_tv"
                     style="@style/TextLightGrey12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -169,6 +179,7 @@
                     android:text="@string/some_date_key" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/payment_method_ib"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
@@ -177,6 +188,7 @@
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/make_payment_btn"
                 style="@style/MainRedButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -48,26 +48,26 @@
                 app:layout_constraintTop_toBottomOf="@id/account_status_rv" />
 
 
-
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/TextInputLayoutWithPrefixStyle"
                 android:id="@+id/event_name_layout"
+                style="@style/TextInputLayoutWithPrefixStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="0dp"
                 android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                app:prefixText="@string/name_key"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/add_friends_tv">
-            <EditText
-                android:id="@+id/event_name_edt"
-                style="@style/EditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="2dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/edit_text_bg_with_grey_border"
-                android:hint="@string/type_name_hint_key"
-                app:layout_constraintTop_toBottomOf="@id/add_friends_tv" />
+                app:layout_constraintTop_toBottomOf="@id/add_friends_tv"
+                app:prefixText="@string/name_key">
+
+                <EditText
+                    android:id="@+id/event_name_edt"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/edit_text_bg_with_grey_border"
+                    android:hint="@string/type_name_hint_key"
+                    app:layout_constraintTop_toBottomOf="@id/add_friends_tv" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -89,13 +89,11 @@
                 app:layout_constraintTop_toBottomOf="@id/icon_img">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/incite_by_email_tv"
                     style="@style/TextWhite14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/invite_by_email_key" />
-
-
-                <!--///////////////////////////////////////Here must be end icon//////////////////////////-->
 
                 <EditText
                     android:id="@+id/email_edt"
@@ -107,8 +105,8 @@
                     android:drawableEnd="@drawable/icon_send_invite"
                     android:hint="@string/enter_email_key" />
 
-
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/find_by_email_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="visible"
@@ -116,6 +114,7 @@
                     tools:listitem="@layout/item_with_user_image_and_email_with_close_icon" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/total_sum_layout"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="24dp"
@@ -125,6 +124,7 @@
                     android:visibility="visible">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/total_to_pay_tv"
                         style="@style/TextWhite14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -133,6 +133,7 @@
                         app:textAllCaps="true" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sum_tv"
                         style="@style/TextWhite16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -155,6 +156,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/add_friends_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -163,7 +165,6 @@
                 app:layout_constraintTop_toBottomOf="@id/save_btn"
                 tools:itemCount="10"
                 tools:listitem="@layout/item_with_user_name_and_image" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -31,6 +31,7 @@
         android:layout_alignTop="@id/add_members_img"/>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/invite_by_email_tv"
         style="@style/TextLightGrey12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +40,7 @@
         android:layout_alignStart="@id/add_members_tv"/>
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/add_members_end_img"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/icon_bottom_arrow"

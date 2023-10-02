@@ -19,7 +19,6 @@
         style="@style/TextWhite14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignTop="@+id/radio_button_rb"
         android:layout_marginTop="6dp"
         android:layout_toEndOf="@id/radio_button_rb"
