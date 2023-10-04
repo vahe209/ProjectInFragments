@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_1"
+    android:orientation="vertical"
+    tools:context=".CreateEvent.EventDetailsFragment">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/empty_downloads_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/empty_list_tv"
+                    style="@style/TextLightGrey14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="66dp"
+                    android:text="@string/download_list_is_empty_key"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/package_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="100dp"
+                    android:src="@drawable/icon_red_ball" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/explore_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="24dp"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/start_exploring_tv"
+                        style="@style/TextLightGrey14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
+                        android:text="@string/start_exploring_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/explore_btn"
+                        style="@style/MainRedButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="0dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="@string/explore_key" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/downloads_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/cannot_be_loaded_layout"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_in_download_fragment" />
+
+            <RelativeLayout
+                android:id="@+id/cannot_be_loaded_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_opp_90"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cannot_be_loaded_img"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_red_ball" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cannot_be_loaded_tv1"
+                    style="@style/TextWhite18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/cannot_be_loaded_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="100dp"
+                    android:text="@string/cannot_download_video_key"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cannot_be_loaded_tv2"
+                    style="@style/TextWhite14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cannot_be_loaded_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="100dp"
+                    android:gravity="center"
+                    android:text="@string/enough_available_storage_key" />
+
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

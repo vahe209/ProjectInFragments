@@ -87,5 +87,12 @@
     <string name="sort_by_key">sort by</string>
     <string name="from_date_key">From date</string>
     <string name="to_date_key">To date</string>
+    <string name="download_list_is_empty_key">Your download list is empty.</string>
+    <string name="start_exploring_text">Start exploring and download your favorite movies and shows.</string>
+    <string name="explore_key">explore</string>
+    <string name="yes_delete_key">Yes, delete</string>
+    <string name="are_you_delete_downloaded_key">Are you sure want to delete from Download?</string>
+    <string name="cannot_download_video_key">Cannot Download Video.</string>
+    <string name="enough_available_storage_key">There is not enough available storage to download video.</string>
 
 </resources>
