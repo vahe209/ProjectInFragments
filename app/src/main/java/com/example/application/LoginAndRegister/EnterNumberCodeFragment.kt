@@ -22,7 +22,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.*
 
-class EnterNumberCodeFragment(
+class   EnterNumberCodeFragment(
     private var selectedItem: CountryCodeItem?,
     private val closeFragmentEnterNumberCode: RegisterFragment
 ) : BottomSheetDialogFragment() {

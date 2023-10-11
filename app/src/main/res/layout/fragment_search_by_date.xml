@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accent_1"
+    android:paddingHorizontal="24dp"
+    tools:context=".Search.SearchByDate">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/year_tv"
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/year_key"
+        android:textAllCaps="true" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/year_edt"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/year_tv"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_bg_with_grey_border"
+        android:hint="@string/enter_year_key"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/year_edt"
+        android:layout_marginTop="40dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runtime_tv"
+            style="@style/TextLightGrey14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/runtime_key"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hours_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@id/minutes_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/runtime_tv">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/hours_edt"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_with_grey_border_radius4"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/minutes_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/hours_layout"
+            app:layout_constraintTop_toTopOf="@id/hours_layout">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/minutes_edt"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_with_grey_border_radius4"
+                android:inputType="number"
+                android:maxLength="2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hours_suffix_tv"
+            style="@style/TextLightGrey12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@string/hours_key"
+            app:layout_constraintBottom_toBottomOf="@id/hours_layout"
+            app:layout_constraintEnd_toEndOf="@id/hours_layout"
+            app:layout_constraintTop_toTopOf="@id/hours_layout" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/minutes_suffix_tv"
+            style="@style/TextLightGrey12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@string/minutes_key"
+            app:layout_constraintBottom_toBottomOf="@id/minutes_layout"
+            app:layout_constraintEnd_toEndOf="@id/minutes_layout"
+            app:layout_constraintTop_toTopOf="@id/minutes_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

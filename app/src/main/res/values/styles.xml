@@ -31,6 +31,10 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/accent_5</item>
     </style>
+    <style name="TextBlue16" parent="TextBlue14">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="TextBlue12" parent="TextBlue14">
         <item name="android:textSize">12sp</item>
     </style>

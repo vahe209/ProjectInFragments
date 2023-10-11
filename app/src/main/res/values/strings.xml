@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Application</string>
     <string name="toolbar_title_in_login_page_key">LOG IN TO WATCH</string>
     <string name="unlock_with_face_id_key">Unlock with Face ID</string>
@@ -94,5 +94,13 @@
     <string name="are_you_delete_downloaded_key">Are you sure want to delete from Download?</string>
     <string name="cannot_download_video_key">Cannot Download Video.</string>
     <string name="enough_available_storage_key">There is not enough available storage to download video.</string>
+    <string name="no_result_found_key">No result found</string>
+    <string name="try_adjusting_search_key">Try adjusting your search or filter to find what you’re looking for.</string>
+    <string name="year_key">Year</string>
+    <string name="enter_year_key">Enter year</string>
+    <string name="runtime_key">runtime</string>
+    <string name="hours_key">Hours</string>
+    <string name="minutes_key" tools:ignore="ExtraTranslation">Minutes</string>
+
 
 </resources>

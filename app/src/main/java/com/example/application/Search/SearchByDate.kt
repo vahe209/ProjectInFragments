@@ -1,4 +1,4 @@
-package com.example.application.CreateEvent
+package com.example.application.Search
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,11 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ViewEventFragment.newInstance] factory method to
+ * Use the [SearchByDate.newInstance] factory method to
  * create an instance of this fragment.
  */
-
-class ViewEventFragment : Fragment() {
+class SearchByDate : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,7 +35,7 @@ class ViewEventFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_event, container, false)
+        return inflater.inflate(R.layout.fragment_search_by_date, container, false)
     }
 
     companion object {
@@ -46,12 +45,12 @@ class ViewEventFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ViewEventFragment.
+         * @return A new instance of fragment SearchByDate.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ViewEventFragment().apply {
+            SearchByDate().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
