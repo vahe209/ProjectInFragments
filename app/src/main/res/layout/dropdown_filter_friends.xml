@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_acc3_with_blue_border_radius4"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="10dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/all_friends_tv"
+        style="@style/TextBlue14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_friends_key" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/all_friends_selected_img"
+        android:layout_width="14dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@id/all_friends_tv"
+        android:layout_alignBottom="@id/all_friends_tv"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@id/all_friends_tv"
+        android:src="@drawable/icon_red_ball" />
+
+    <View
+        android:id="@+id/blue_line_view1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/all_friends_tv"
+        android:layout_alignStart="@id/all_friends_tv"
+        android:layout_alignEnd="@id/all_friends_selected_img"
+        android:layout_marginTop="12dp"
+        android:background="@color/accent_1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/accepted_tv"
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blue_line_view1"
+        android:layout_marginTop="12dp"
+        android:text="@string/accepted_key" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/accepted_selected_img"
+        android:layout_width="14dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@id/accepted_tv"
+        android:layout_alignBottom="@id/accepted_tv"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@id/all_friends_tv"
+        android:src="@drawable/icon_red_ball" />
+
+    <View
+        android:id="@+id/blue_line_view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/accepted_tv"
+        android:layout_alignStart="@id/accepted_tv"
+        android:layout_alignEnd="@id/accepted_selected_img"
+        android:layout_marginTop="12dp"
+        android:background="@color/accent_1" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/invited_tv"
+        style="@style/TextLightGrey14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blue_line_view2"
+        android:layout_marginTop="12dp"
+        android:text="@string/all_friends_key" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/invited_selected_img"
+        android:layout_width="14dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@id/invited_tv"
+        android:layout_alignBottom="@id/invited_tv"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@id/invited_tv"
+        android:src="@drawable/icon_red_ball" />
+</RelativeLayout>

@@ -101,6 +101,13 @@
     <string name="runtime_key">runtime</string>
     <string name="hours_key">Hours</string>
     <string name="minutes_key" tools:ignore="ExtraTranslation">Minutes</string>
+    <string name="enter_phone_or_email_key">Enter phone number or email</string>
+    <string name="found_in_qrflix_key">found in qrflix</string>
+    <string name="add_key">Add</string>
+    <string name="contact_list_key">contact list</string>
+    <string name="all_friends_key">All Friends</string>
+    <string name="want_to_delete_request_key">Are you sure want to delete request?</string>
+    <string name="accepted_key">Accepted</string>
 
 
 </resources>

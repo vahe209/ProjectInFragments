@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accent_3"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv"
+        style="@style/TextWhite14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/want_to_delete_request_key" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/close_imb"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/icon_cancel" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete_btn"
+        style="@style/MainRedButtonStyle"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tv"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_main_red_button"
+        android:padding="0dp"
+        android:text="@string/yes_delete_key"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+</RelativeLayout>
