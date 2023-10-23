@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/check_box"
+        android:visibility="gone"
+        android:buttonTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/card_type_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/check_box"
+        android:background="@drawable/forgot_pass_code_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/card_type_img"
+            android:layout_width="40dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:background="@color/accent_6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/card_number_tv"
+            style="@style/TextWhite14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/card_type_img"
+            android:layout_centerHorizontal="true"
+            android:text="asdasddasdasd"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expires_date_tv"
+            style="@style/TextLightGrey10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_number_tv"
+            android:layout_alignStart="@id/card_number_tv"
+            android:text="asdasd" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

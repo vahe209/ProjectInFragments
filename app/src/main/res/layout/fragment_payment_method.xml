@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mark_as_primary_img"
+        android:layout_width="20dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/accent_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mark_as_primary_tv"
+        style="@style/TextBlue14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/mark_as_primary_img"
+        app:layout_constraintStart_toEndOf="@id/mark_as_primary_img"
+        app:layout_constraintTop_toTopOf="@id/mark_as_primary_img"
+        tools:text="Mark as primary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/remove_card_img"
+        android:layout_width="18dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/accent_5"
+        app:layout_constraintBottom_toBottomOf="@id/remove_card_tv"
+        app:layout_constraintEnd_toStartOf="@id/remove_card_tv"
+        app:layout_constraintTop_toTopOf="@id/remove_card_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/remove_card_tv"
+        style="@style/TextBlue14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="Mark as primary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_payment_method_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/mark_as_primary_tv"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_payment_method" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextWhite16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/forgot_pass_code_bg"
+        android:gravity="center"
+        android:text="@string/new_payment_method_key"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/list_payment_method_recycler" />
+</androidx.constraintlayout.widget.ConstraintLayout>
