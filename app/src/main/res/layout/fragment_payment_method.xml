@@ -62,7 +62,6 @@
         tools:itemCount="3"
         tools:listitem="@layout/item_payment_method" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         style="@style/TextWhite16"
         android:layout_width="match_parent"
